@@ -1,0 +1,58 @@
+language: python
+python:
+  - "2.7.5"
+  
+# environment variables
+env:
+  - DJANGO_VERSION=1.8.14
+
+# command to install dependencies
+install:
+  - pip install
+  - pip install -q Django==$DJANGO_VERSION
+  
+# 
+#before_script:
+  
+# command to run tests
+script: nosetests
+
+#
+#after_script:
+
+# after successful run
+#after_success:
+
+# stuff to run before the deploy
+before_deploy: "echo 'Starting deploy, hold onto something...'"
+
+# deployment process
+# deploy:
+# provider: openshift
+#  user: rchapman83
+#  password:
+#    secure: 
+#  app: personal-web
+#  domain: rchapman83
+#  on:
+#    repo: rchapman83/personal-web
+#    branch: master
+
+# junk to run after deploy
+after_deploy: "echo 'Fin'"
+
+# notifications
+notifications:
+  email: false
+
+# blacklist
+branches:
+  except:
+    - legacy
+    - experimental
+    - dev
+
+# whitelist
+  only:
+    - master
+    - stable
