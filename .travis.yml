@@ -1,10 +1,10 @@
 language: python
 python:
-  - "2.7.5"
+  - "2.7"
   
 # environment variables
 env:
-  - DJANGO_VERSION=1.8.14
+  - DJANGO_VERSION=1.8
 
 # command to install dependencies
 install:
