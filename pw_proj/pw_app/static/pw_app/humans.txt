@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible:
+
+# TEAM
+
+    Rowan Chapman -- Leader -- @rchapman83
+
+# THANKS
+
+    Rowan Chapman
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3,
+    Normalize.css
