@@ -9,7 +9,7 @@ from flask import Flask, render_template, send_from_directory
 
 @application.route('/')
 def entry():
-    return render_template('index.html')
+    return render_template('test.html')
 
 @application.route('/robots.txt')
 def robots_static():

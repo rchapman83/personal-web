@@ -4,18 +4,15 @@
 from os import environ
 import subprocess
 
-# Boolean 0=Website mode 1=API mode
+# Boolean 0=Website mode enabled all is good 1=Disabled web app
 x = environ.get('APP_MODE')
 
 if x=="0":
-    environ["APP_MODULE"] = "app:application"
     print('Running web application')
-
 elif x=="1":
-    environ["APP_MODULE"] = "api:application"
-    print('Running api')
+    print('Web app disabled')
 else:
-    print('Invalid value using defaults')
+    print('Invalid value starting web application')
 
 # Grab the config file from enviro var
 c = environ.get('APP_CONFIG')
@@ -24,7 +21,6 @@ a = environ.get('APP_MODULE')
 
 
 # Run Gunicorn to serve the app
-print('Time to start it up')
 subprocess.call(['gunicorn', '-c', c, a])
 
 # Run the Flask app server
