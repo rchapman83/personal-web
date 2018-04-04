@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>http://www.passwd.studio/</loc>
+  <lastmod>2018-01-05T10:00:00+00:00</lastmod>
+  <news:news>
+     <news:publication>
+       <news:name>Passwd Studio live!</news:name>
+       <news:language>en</news:language>
+     </news:publication>
+     <news:genres>UserGenerated</news:genres>
+     <news:publication_date>2017-09-18</news:publication_date>
+     <news:title>Passwd Studio</news:title>
+     <news:keywords>password, passwd, studio, generator, etc-passwd</news:keywords>
+   </news:news>
+</url>
+</urlset>
