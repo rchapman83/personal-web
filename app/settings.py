@@ -1,13 +1,12 @@
 # -*- settings:utf-8 -*-
-# Flask settings 
+# Flask settings
 
 import logging
-import os
+from os import environ
 
-
-proj_name = os.environ.get('PROJECT_NAME')
-debug_mode = os.environ.get('FLASK_DEBUG')
-secret_code = os.environ.get('FLASK_SECRET') 
+proj_name = environ.get('PROJECT_NAME')
+debug_mode = environ.get('FLASK_DEBUG')
+secret_code = environ.get('FLASK_SECRET')
 
 DEBUG = debug_mode
 TESTING = False
