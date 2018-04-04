@@ -7,4 +7,3 @@ Disallow: /static/js/
 Disallow: /static/fonts/
 Disallow: /cgi-bin/
 Disallow: /tmp/
-Disallow: /environ/

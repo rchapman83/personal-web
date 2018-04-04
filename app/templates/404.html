@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Page Not Found{% endblock %}
+{% block title %}Err 404: Page Not Found{% endblock %}
 {% block content %}
   <!-- Begin page content -->
   <div class="page-header">
@@ -13,9 +13,4 @@
     <img class="media-object" src="{{ url_for('static', filename='img/error-404.png') }}" alt="404" height="100" width="100">
   </p>
 {% endblock %}
-{% block footer %}
-  <!-- Bottom page content -->
-  <div class="container">
-    <p class="text-muted">Site created by Rowan Chapman</p>
-  </div>
-{% endblock %}
+

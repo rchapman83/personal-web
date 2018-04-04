@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Server Error{% endblock %}
+{% block title %}Err 500: Server Error{% endblock %}
 {% block content %}
 <!-- Begin page content -->
 <div class="page-header">
@@ -7,15 +7,10 @@
 </div>
 <div class="alert alert-danger" role="alert">
     <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
-      opps, something bad went down.
+      Internal server error, something bad went down.
 </div>
 <p>
-  <img class="media-object" src="{{ url_for('static', filename='img/programming-1.png') }}" alt="500" height="100" width="100">
+  <img class="media-object" src="{{ url_for('static', filename='img/bugs-search-1.png') }}" alt="500" height="100" width="100">
 </p>
 {% endblock %}
-{% block footer %}
-  <!-- Bottom page content -->
-  <div class="container">
-    <p class="text-muted">Site created by Rowan Chapman</p>
-  </div>
-{% endblock %}
+
