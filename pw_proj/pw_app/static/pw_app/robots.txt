@@ -1,6 +1,0 @@
-# robotstxt.org/
-
-User-agent: *
-Disallow: /css/
-Disallow: /bg/
-Disallow: /img/

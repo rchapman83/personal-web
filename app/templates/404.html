@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Err 404: Page Not Found{% endblock %}
+{% block content %}
+  <!-- Begin page content -->
+  <div class="page-header">
+      <h1>404 : <small>Page Not Found</small></h1>
+  </div>
+  <div class="alert alert-warning" role="alert">
+    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+      Ahhh mate, the resource you are looking for is missing.
+  </div>
+  <p>
+    <img class="media-object" src="{{ url_for('static', filename='img/error-404.png') }}" alt="404" height="100" width="100">
+  </p>
+{% endblock %}
+

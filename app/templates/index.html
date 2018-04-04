@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+  <!-- Begin page content -->
+  <div class="page-header">
+      <h1>PASSWD STUDIO</h1>
+  </div>
+  <p class="lead"> {{ leadText }} <br> <mark>{{ passwd }}</mark></p>
+  <br>
+  <div class="media">
+    <div class="media-left">
+      <img class="media-object" src="{{ url_for('static', filename='img/api.png') }}" alt="API example image" height="100" width="100">
+    </div>
+    <div class="media-body">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="panel-title">Using the API</h3>
+        </div>
+        <div class="panel-body">
+            <p>
+            <h4>Work in Progress</h4>
+            Building a RESTful API for this project to provide the ability to quickly generate strong passwords in various forms from the CLI using cURL. 
+            I hope it may even become a building block for generating strong passwords in future apps. This is a personal project to promote the use of strong passwords. 
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block footer %}
+  <!-- Bottom page content -->
+  <div class="container">
+    <p class="text-muted">Site created by Rowan Chapman</p>
+  </div>
+{% endblock %}
