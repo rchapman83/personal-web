@@ -11,10 +11,11 @@ c = environ.get('APP_CONFIG')
 # Get which app to run
 a = environ.get('APP_MODULE')
 
-if x=="0":
+if x=='0':
     print('Starting web application')
-elif x=="1":
+elif x=='1':
     print('Web app is disabled and will exit')
+    sys.exit('Exiting application is disabled')
 else:
     print('Invalid mode value default start up')
 
