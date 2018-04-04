@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="language" content="en">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Rowan Chapman">
     <meta name="description" content="A basic password generator also avaiable via a RESTful API">
     <meta name="keyphrases" content="Rowan Chapman, Rowan Chapman PW, Rowan Chapman personal web site, Rowan Chapman personal web, Rowan Chapman micro site">
@@ -17,10 +17,15 @@
     <link type="text/plain" rel="author" href="{{ url_for('static', filename='humans.txt') }}">
     <!-- Style Sheets --------------––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+
     <!-- Scripts --------------––––––––––––––––––––––––––––––––––––––––––-----––– -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/freelancer.min.js') }}"></script>
     <!-- Font --------------––––––––––––––––––––––––––––––––––––---––––––-----––– -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     
