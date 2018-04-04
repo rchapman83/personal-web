@@ -15,7 +15,7 @@ if x=='0':
     print('Starting web application')
 elif x=='1':
     print('Web app is disabled and will exit')
-    sys.exit('Exiting application is disabled')
+    sys.exit('Exiting application')
 else:
     print('Invalid mode value default start up')
 
