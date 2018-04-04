@@ -2,12 +2,14 @@
 # make Gunicorn work good and stuff
 
 import multiprocessing
+import os
+
 
 bind = '0.0.0.0:8080'
-name = 'passwd-studio'
+name = 'personal-web'
 backlog = 2048
 max_requests = 1000
-proc_name = 'passwd-studio'
+proc_name = os.environ.get('PROJECT_NAME')
 workers = int((multiprocessing.cpu_count() * 2) + 1)
 threads = int(multiprocessing.cpu_count()+1)
 daemon = False
