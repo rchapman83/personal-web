@@ -39,9 +39,6 @@
               <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
               <li>Minimal custom CSS so you are free to explore your own unique design options</li>    
             </ul>
-            <svg class="feather">
-                <use xlink:href="{{ url_for('static', filename='svg/circle.svg#circle') }}"/>
-</svg>
           </div>
         </div>
       </div>
@@ -52,6 +49,8 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h2>Services we offer</h2>
+            <!-- example icon -->
+    <i data-feather="circle"></i>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
           </div>
         </div>
@@ -68,4 +67,5 @@
         </div>
       </div>
     </section>
+    <script>feather.replace()</script>
 {% endblock %}
