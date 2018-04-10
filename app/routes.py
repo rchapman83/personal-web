@@ -12,9 +12,8 @@ import urllib, hashlib
 def entry():
     # Set your desired email, must be lower case
     gravEmail = 'rowan.chapman@hobsons.com'
-    urlSize = 40
     # construct the url
-    gravURL = 'https://www.gravatar.com/avatar/' + hashlib.md5(gravEmail.encode('utf-8')).hexdigest() + '?s=150'
+    gravURL = 'https://www.gravatar.com/avatar/' + hashlib.md5(gravEmail.encode('utf-8')).hexdigest() + '?s=100'
     return render_template('index.html', profilePic=gravURL)
 
 @application.route('/robots.txt')
