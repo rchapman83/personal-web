@@ -5,11 +5,16 @@
 from . import application
 # Import flask stuff
 from flask import Flask, render_template, send_from_directory
-
+# import code for encoding urls and generating md5 hashes
+import urllib, hashlib
 
 @application.route('/')
 def entry():
-    return render_template('index.html')
+    # Set your variables here
+    gravEmail = "rowan.chapman@hobsons.com"
+    # construct the url
+    gravURL = "https://www.gravatar.com/avatar/" + hashlib.md5(gravEmail.lower()).hexdigest() + "?"
+    return render_template('index.html', profilePic=gravURL)
 
 @application.route('/robots.txt')
 def robots_static():
