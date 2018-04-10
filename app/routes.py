@@ -11,9 +11,9 @@ import urllib, hashlib
 @application.route('/')
 def entry():
     # Set your variables here
-    gravEmail = "rowan.chapman@hobsons.com"
+    gravEmail = 'rowan.chapman@hobsons.com'
     # construct the url
-    gravURL = "https://www.gravatar.com/avatar/" + hashlib.md5(gravEmail.lower()).hexdigest() + "?"
+    gravURL = 'https://www.gravatar.com/avatar/' + hashlib.md5(gravEmail.lower()).hexdigest() + '?s=150'
     return render_template('index.html', profilePic=gravURL)
 
 @application.route('/robots.txt')
