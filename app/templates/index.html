@@ -1,6 +1,60 @@
 {% extends "base.html" %}
 {% block title %}[rnchapman.pw]{% endblock %}
 {% block content %}
-<h1> Rowan Chapman </h1>
-<p>personal web site under construction</p>
+    <!-- Begin page content -->
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">rnchapman.pw</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <!-- Glyths in nav from feathericons.com-->
+                <a class="nav-item nav-link" href="https://www.facebook.com/rnchapman"><i data-feather="facebook"></i></a>
+                <a class="nav-item nav-link" href="https://twitter.com/rchapman83"><i data-feather="twitter"></i></a>
+                <a class="nav-item nav-link" href="https://www.instagram.com/chapmanrowan/"><i data-feather="instagram"></i></a>
+                <a class="nav-item nav-link" href="https://github.com/rchapman83/"><i data-feather="github"></i></a>
+                <a class="nav-item nav-link" href="https://www.linkedin.com/in/rowan-chapman-b0686895"><i data-feather="linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    </nav>
+    <!-- Header -->
+    <header class="bg-primary text-white">
+        <div class="container text-center">
+            <div class="media">
+                <img src="{{ profilePic }}" class="rounded" alt="Gravatar">
+                    <div class="media-body">
+                        <h1 class="mt-0">Rowan Chapman</h1>
+                        IT Pro // Hacker // Drinker of Ales
+                    </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>About</h2>
+            <p class="lead">This is a great place to tor you own landing page designs! This template features:</p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Contact</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consati incidunt, quationem, in, quo totam.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 {% endblock %}
