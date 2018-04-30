@@ -14,8 +14,7 @@ a = environ.get('APP_MODULE')
 if x=='0':
     print('Starting web application')
 elif x=='1':
-    print('Web app is disabled and will exit')
-    sys.exit('Exiting application')
+    print('Web app is disabled and will take alternitive action')
 else:
     print('Invalid mode value default start up')
 
