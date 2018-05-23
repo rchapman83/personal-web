@@ -15,13 +15,17 @@ def gravatar():
     # Set your desired email from environ var, must be lower case
     gravEmail = environ.get('GRAV_USER')
     # construct the url
-    gravURL = 'https://www.gravatar.com/avatar/' + hashlib.md5(gravEmail.encode('utf-8')).hexdigest() + '?s=100'
+    gravURL = 'https://www.gravatar.com/avatar/' + hashlib.md5(gravEmail.encode('utf-8')).hexdigest() + '?s=150'
     return gravURL
 
 @application.route('/')
 def entry():
     gravThumb = gravatar()
     return render_template('index.html', profilePic=gravThumb)
+
+@application.route('/colophon')
+def entry():
+    return render_template('colophon.html')
 
 @application.route('/robots.txt')
 def robots_static():
