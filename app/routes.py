@@ -24,7 +24,7 @@ def entry():
     return render_template('index.html', profilePic=gravThumb)
 
 @application.route('/colophon')
-def entry():
+def colophon():
     return render_template('colophon.html')
 
 @application.route('/robots.txt')

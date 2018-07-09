@@ -13,7 +13,7 @@ TESTING = False
 USE_X_SENDFILE = False
 CSRF_ENABLED = True
 SECRET_KEY = secret_code
- 
+
 # LOGGING
 LOGGER_NAME = '%s_log' % proj_name
 LOG_FILENAME = '/var/tmp/app.%s.log' % proj_name

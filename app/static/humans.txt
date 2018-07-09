@@ -7,7 +7,9 @@
 
 # THANKS
 
-    Rowan Chapman
+    Cole Bemis - @colebemis,
+    Julieta Ulanovsky,
+    Vernon Adams - @sansoxygen
 
 # TECHNOLOGY COLOPHON
 
