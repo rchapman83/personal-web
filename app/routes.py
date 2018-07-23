@@ -31,6 +31,10 @@ def colophon():
 def robots_static():
     return send_from_directory(application.static_folder, request.path[1:])
 
+@application.route('/keybase.txt')
+def keybase_static():
+    return send_from_directory(application.static_folder, request.path[1:])
+
 @application.route('/sitemap.xml')
 def sitemap_static():
     return send_from_directory(application.static_folder, request.path[1:])
