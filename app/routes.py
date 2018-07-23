@@ -4,7 +4,7 @@
 # Import app via circular imports
 from . import application
 # Import flask stuff
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, request
 # Import os environment mods
 from os import environ
 # import code for encoding urls and generating md5 hashes
@@ -29,6 +29,10 @@ def colophon():
 
 @application.route('/robots.txt')
 def robots_static():
+    return send_from_directory(application.static_folder, request.path[1:])
+
+@application.route('/humans.txt')
+def human_static():
     return send_from_directory(application.static_folder, request.path[1:])
 
 @application.route('/keybase.txt')
