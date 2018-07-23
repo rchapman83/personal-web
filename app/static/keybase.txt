@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/rnchapman
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://www.rnchapman.pw
+  * I am rnchapman (https://keybase.io/rnchapman) on keybase.
+  * I have a public key with fingerprint 9B60 D0F6 7501 158B 10B9  73C1 8BF1 B07D 75CB AB43
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01012344ba5cfdcc238ab859c32184d1cfc75867e681f86e466f41e3a9488bbe33890a",
+      "fingerprint": "9b60d0f67501158b10b973c18bf1b07d75cbab43",
+      "host": "keybase.io",
+      "key_id": "8bf1b07d75cbab43",
+      "kid": "01012344ba5cfdcc238ab859c32184d1cfc75867e681f86e466f41e3a9488bbe33890a",
+      "uid": "3894fc78f5f39d669a8f141639babe19",
+      "username": "rnchapman"
+    },
+    "service": {
+      "hostname": "www.rnchapman.pw",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1532347457,
+  "expire_in": 157680000,
+  "prev": "4f814cbdb885c437b7320f65f0c0aa4b2722e15761cf14e5d05af49b058faed3",
+  "seqno": 2,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.77
+Comment: https://keybase.io/crypto
+
+yMIiAnicrVJJaBRBFJ0xajQQl5OIcaEOQSTEru6q7uqJHhTUhLjhBjLqWFVdPdMk
+6Z5MdzLGGC9iRBMk4oIYUQ9q4nZRxBWJIkIMhKCoGHFwR1BwAdEEEq0O6smjdSn+
+r/fef//Xv1uYFymInu0g+7oPzNSjPbfb6yLxtXcXNALmWQ0g1giqxMglqi3hB4kq
+xwIxoEAFqhpCjGJuW5yrGqGMYJNrKiTIgtzmBia6IXQCbaILpOs2gkKjJiKEMaFp
+xFQoKAG24yZFJp1x3EDKmkxXLMXWDaxAiAmDCjMNjUPCbMgUwzIwZ5QhTRJTnh8y
+pDlGfVHqeDIng8SIvX/g/7PvuhE5GSHJIDa2NdPSdZMSGyKoa6YsK6AZAn2RcWmN
+kOiMy1M0XUNd0FQCZLre4SKcbNjKb0g2my39CytNZ6VAOuMFHveq5WsqCNKxkBw0
+pEfQgiV+6ySY41pylpJQLzK+47kgBiWSB04oDLEm2zYQNkqA2JJ2MiLhhAhs6ESR
+Jywj6qUksglEnFmMEMyRZjBDU+WHYFvhCqWIqYaqipAmRwWRwJaCqY1MpmBiU2GF
+k/ZFreuBmCpt0qSU9J2kS4O6jABNd7o2jI5ECyJjx4wKdyxSMH7Sn82r/J4/PLu3
+dPL5hs2R5Y86owdx8am2wU3zK04DbcfovfrHJytq1OcegxX9E5vXdd3siE7OFYHX
+7W+GW3K7astB3+Ghk7k15Tdqb3Yefn9p3sCM2EG35XHe1FVbZw9dvVcA0m1gWntj
+l1f2NFW+Z/70ntVnLmyccLXId3bnJZvOrZxbdfxF2Zz7tyq/xntaO66Mb31Vd/7d
+l3v9J+70rer4WkYfHup/WXzr2OCimbHIwA//Q0XNNu/b21Gf91fNbauctawiGxHd
+eucntRms/nQtbvK1/PP1Z9t3Dly+2Ps9QPhiMj5pydL+QjU4oj1gQ9ELU1bmD/6s
+Rwu7Fx8dl/2yb2/ubX6w/hftBkMN
+=rN6i
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rnchapman
+
+==================================================================
