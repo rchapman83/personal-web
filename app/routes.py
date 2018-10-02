@@ -25,11 +25,17 @@ def gravatar():
 def githubChg():
     # Set personal access token generated from GitHub via an enviro var
     gToken = environ.get('GIT_TOKEN')
+    gRepo = environ.get('GIT_REPO')
     gAccess = Github(gToken)
-    repoInfo = 'The repos names are:'
-    for repo in gAccess.get_user().get_repos():
-        i = repo.name
+    repo = gAccess.get_repo(gRepo)
+    repoInfo = 'The pull req nums are: '
+    pulls = repo.get_pulls(state='open', sort='created', base='dev')
+    for pr in pulls:
+        i = pr.number
         repoInfo = repoInfo + i
+    #for repo in gAccess.get_user().get_repos():
+     #   i = repo.name
+      #  repoInfo = repoInfo + i
     return repoInfo
 
 @application.route('/')
