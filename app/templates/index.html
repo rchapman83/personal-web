@@ -1,4 +1,4 @@
-h {% extends "base.html" %}
+{% extends "base.html" %}
 {% block title %}[rnchapman.pw]{% endblock %}
 {% block content %}
     <!-- Begin page content -->
@@ -37,25 +37,16 @@ h {% extends "base.html" %}
           <div class="col-lg-8 mx-auto">
             <h2>Hello, I'm Rowan.</h2>
             <br>
-            <div class="media">
-            <img class="align-self-start mr-3 rounded" src="{{ profilePic }}" alt="Gravatar">
-            <div class="media-body">
-                <p>
-                    You can call me Chappy if you prefer, i'm not fussed.
-                    I am a Network Engineer with over 12 year of experiance. Currently i'm working for 
-                    an EduTech company and loving it. I consider myself a hacker, tinkerer, thinker, and
-                    solutions builder. Most of all i'm a tech junkie who loves to discover the new in the 
-                    ever changing technology landscape.
-                </p>
-                <p>
-                    I have a French Bulldog called Charles Barkley, yes i'm a Phoenix Suns fan. Although
-                    I live in Melbourne, Brunswick specifically I'm am a Geelong Cats fan. 
-                    When not working I can Usally be found in and around alpine areas getting my snowboarding fix, 
-                    playing on my PC (needs an upgrade) at home, shooting some hoops with friends or 
-                    exploring one of the many bars or bunch spots on offer in Melbourne.
-                </p>
-            </div>
-            </div>            
+            <img src="{{ profilePic }}" alt="Gravatar" class="rounded float-left mr-3">
+            <p>
+                You can call me Chappy if you prefer. I am a Network Engineer with over 12 year of experience located in Melbourne, Brunswick specifically. 
+                I consider myself a hacker, technologist, thinker, and solutions builder. 
+                Most of all I’m a tech guy who loves to discover new things in the ever-changing technology landscape.
+            </p>
+            <p>
+                When I’m not busy making computers convert my input into magic I can be found walking my dog Charles Barkley, 
+                sadly yes, I’m a Phoenix Suns fan. I'm also partial to exploring one of the many bars or bunch spots on offer in my amazing city.
+            </p>       
           </div>
         </div>
       </div>
@@ -73,13 +64,13 @@ h {% extends "base.html" %}
             <tbody>
             <tr>
                 <td>
-                    <a href="https://www.facebook.com/rnchapman"><i data-feather="facebook" alt="Facebook"></i></a>
+                    <a href="https://www.facebook.com/rnchapman" alt="Facebook"><i data-feather="facebook"></i></a>
                 </td>
                 <td>
                     <span class="align-middle">rnchapman</span>
                 </td>
                 <td>
-                    <a href="https://twitter.com/rchapman83"><i data-feather="twitter" alt="Twitter"></i></a>
+                    <a href="https://twitter.com/rchapman83" alt="Twitter"><i data-feather="twitter"></i></a>
                 </td>
                 <td>
                     <span class="align-middle">rchapman83</span>
@@ -87,13 +78,13 @@ h {% extends "base.html" %}
             </tr>
             <tr>
                 <td>
-                    <a href="https://www.instagram.com/chapmanrowan/"><i data-feather="instagram" alt="Instagram"></i></a>
+                    <a href="https://www.instagram.com/chapmanrowan/" alt="Instagram"><i data-feather="instagram"></i></a>
                 </td>
                 <td>
                     <span class="align-middle">chapmanrowan</span>
                 </td>
                 <td>
-                    <a href="https://github.com/rchapman83/"><i data-feather="github" alt="GitHub"></i></a>
+                    <a href="https://github.com/rchapman83/" alt="GitHub"><i data-feather="github"></i></a>
                 </td>
                 <td>
                     <span class="align-middle">rchapman83</span>
@@ -101,24 +92,24 @@ h {% extends "base.html" %}
             </tr>
             <tr>
                 <td>
-                    <a href="https://www.linkedin.com/in/rowan-chapman-b0686895"><i data-feather="linkedin" alt="LinkedIn"></i></a>
+                    <a href="https://www.linkedin.com/in/rowan-chapman-b0686895" alt="LinkedIn"><i data-feather="linkedin"></i></a>
                 </td>
                 <td>
                     <span class="align-middle">LinkedIn</span>
                 </td>
                 <td>
-                    <a href="http://www.rnchapman.pw"><i data-feather="dollar-sign" alt="BitCoin"></i></a> 
+                    <a href="http://www.rnchapman.pw" alt="BitCoin"><i data-feather="dollar-sign"></i></a> 
                 </td>
                 <td>
-                    Bitcoin   
+                    <span class="align-middle">Bitcoin</span>  
                 </td>
             </tr>
             <tr>
                 <td>
-                    <a href="https://keybase.io/rnchapman"><i data-feather="user" alt="PGP"></i></a>
+                    <a href="https://keybase.io/rnchapman" alt="PGP"><i data-feather="award"></i></a>
                 </td>
                 <td>
-                    rnchapman (8BF1 B07D 75CB AB43)
+                    <span class="align-middle">PGP (8BF1 B07D 75CB AB43)</span>
                 </td>
                 <td>
                     
