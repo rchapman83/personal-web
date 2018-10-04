@@ -44,6 +44,7 @@ def entry():
     return render_template('index.html', profilePic=x)
 
 @application.route('/colophon')
+@application.route('/colophon/')
 def colophon():
     return render_template('colophon.html')
 
