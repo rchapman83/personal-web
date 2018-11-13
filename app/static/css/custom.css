@@ -11,14 +11,18 @@ body    {
 
 header {
             padding: 154px 0 100px;
-            background-color: #007bff;
+            background-color: #F14281;
             background-image: url("/static/img/header1.jpg");
             background-repeat: no-repeat;
             background-position: left top;
             font-family: 'Bangers', cursive;
-            color: #fff;
+            color: #ffffff;
 }
 
 section {
   padding: 100px 0;
+}
+
+footer {
+  color: #007bff;
 }
