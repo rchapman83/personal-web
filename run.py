@@ -15,7 +15,8 @@ t = environ.get('TIMBER_TOKEN')
 
 # Never allow more than 50 outstanding log events in buffer and send any outstanding log events at most every 60 seconds
 logger = logging.getLogger(__name__)
-timber_handler = timber.TimberHandler(api_key=t, level=logging.DEBUG, buffer_capacity=50, flush_interval=60, raise_exceptions=True)
+# timber_handler = timber.TimberHandler(api_key=t, level=logging.DEBUG, buffer_capacity=50, flush_interval=60, raise_exceptions=True)
+timber_handler = timber.TimberHandler(api_key=t, level=logging.DEBUG)
 logger.addHandler(timber_handler)
 logger.debug('test msg')
 
