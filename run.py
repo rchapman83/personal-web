@@ -2,6 +2,7 @@
 # Entry point to bring up the web app
 
 from os import environ
+import logging, timber
 
 # Boolean 0=Website mode enabled all is good 1=Disabled web app 2=default flask server for debug
 x = environ.get('APP_MODE')
@@ -9,6 +10,12 @@ x = environ.get('APP_MODE')
 c = environ.get('APP_CONFIG')
 # Get which app to run
 a = environ.get('APP_MODULE')
+# Timber logging api token
+l = environ.get('TIMBER_TOKEN')
+
+logger = logging.getLogger(__name__)
+timber_handler = timber.TimberHandler(api_key=l)
+logger.addHandler(timber_handler)
 
 if x=='0':
     print('Starting web application')
