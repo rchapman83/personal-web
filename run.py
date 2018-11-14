@@ -19,12 +19,15 @@ logger.addHandler(timber_handler)
 
 if x=='0':
     print('Starting web application')
+    logger.info('Starting up gunicorn')
     import subprocess
     # Attempt to run Gunicorn to serve the app
     try:
         subprocess.call(['gunicorn', '-c', c, a])
+        logger.info('gunicorn up')
     except RuntimeError:
         print('Failed to start-up application server, exiting')
+        logger.critical('Failed to start-up gunicorn, exiting. Consider putting application into debug mode')
 elif x=='1':
     print('Web application is disabled and will take alternitive action')
 elif x=='2':
