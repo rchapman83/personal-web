@@ -14,7 +14,7 @@ a = environ.get('APP_MODULE')
 l = environ.get('TIMBER_TOKEN')
 
 logger = logging.getLogger(__name__)
-timber_handler = timber.TimberHandler(api_key=l, level=logging.info)
+timber_handler = timber.TimberHandler(api_key=l, level=logging.DEBUG)
 logger.addHandler(timber_handler)
 
 if x=='0':
