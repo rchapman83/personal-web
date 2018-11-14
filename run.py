@@ -17,6 +17,7 @@ l = environ.get('TIMBER_TOKEN')
 logger = logging.getLogger(__name__)
 timber_handler = timber.TimberHandler(api_key=l, level=logging.DEBUG, buffer_capacity=50, flush_interval=60)
 logger.addHandler(timber_handler)
+logger.debug('test msg')
 
 if x=='0':
     print('Starting web application')
