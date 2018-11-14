@@ -10,12 +10,13 @@ x = environ.get('APP_MODE')
 c = environ.get('APP_CONFIG')
 # Get which app to run
 a = environ.get('APP_MODULE')
-# Timber logging api token
-l = environ.get('TIMBER_TOKEN')
+# Timber api token and set logging level
+lg = environ.get('TIMBER_TOKEN')
+lv = environ.get('TIMBER_LEVEL')
 
 # Never allow more than 50 outstanding log events in buffer and send any outstanding log events at most every 60 seconds
 logger = logging.getLogger(__name__)
-timber_handler = timber.TimberHandler(api_key='', level=logging.DEBUG, buffer_capacity=50, flush_interval=60)
+timber_handler = timber.TimberHandler(api_key=lg, level=lv, buffer_capacity=50, flush_interval=60)
 logger.addHandler(timber_handler)
 logger.debug('test msg')
 
