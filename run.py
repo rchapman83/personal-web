@@ -13,18 +13,19 @@ a = environ.get('APP_MODULE')
 # Timber logging api token
 l = environ.get('TIMBER_TOKEN')
 
+# Never allow more than 50 outstanding log events in buffer and send any outstanding log events at most every 60 seconds
 logger = logging.getLogger(__name__)
-timber_handler = timber.TimberHandler(api_key=l, level=logging.DEBUG)
+timber_handler = timber.TimberHandler(api_key=l, level=logging.DEBUG, buffer_capacity=50, flush_interval=60)
 logger.addHandler(timber_handler)
 
 if x=='0':
     print('Starting web application')
-    logger.info('Starting up gunicorn')
+    logger.info('Starting web application as normal')
     import subprocess
     # Attempt to run Gunicorn to serve the app
     try:
         subprocess.call(['gunicorn', '-c', c, a])
-        logger.info('gunicorn up')
+        logger.info('gunicorn start-up complete')
     except RuntimeError:
         print('Failed to start-up application server, exiting')
         logger.critical('Failed to start-up gunicorn, exiting. Consider putting application into debug mode')
@@ -32,6 +33,7 @@ elif x=='1':
     print('Web application is disabled and will take alternitive action')
 elif x=='2':
     print('Starting web application in debug mode')
+    logger.info('Starting flask app server in debug mode')
     # Run the Flask app server
     from flask import Flask
     from app import application
