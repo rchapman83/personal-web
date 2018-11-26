@@ -1,5 +1,7 @@
 gunicorn==19.9.0
 flask==1.0.2
 setproctitle
+timber
+certbot
 twilio
 PyGithub

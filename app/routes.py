@@ -11,6 +11,8 @@ from os import environ
 from github import Github
 # Import code for encoding urls and generating md5 hashes
 import urllib, hashlib
+# Importing logging libs
+import logging, timber
 
 # Define custom functions
 # Funtion to generate the URL my gravatar profile picture on the home page
@@ -51,6 +53,11 @@ def colophon():
 @application.route('/test')
 def test():
     y = githubChg()
+    t = environ.get('TIMBER_TOKEN')
+    logger = logging.getLogger(__name__)
+    timber_handler = timber.TimberHandler(api_key=t)
+    logger.addHandler(timber_handler)
+    logger.info('test msg')
     return render_template('test.html', chgLog=y)
 
 @application.route('/robots.txt')
