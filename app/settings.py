@@ -9,7 +9,7 @@ debug_mode = environ.get('FLASK_DEBUG')
 secret_code = environ.get('FLASK_SECRET')
 
 DEBUG = debug_mode
-TESTING = False
+TESTING = debug_mode
 USE_X_SENDFILE = False
 CSRF_ENABLED = True
 SECRET_KEY = secret_code
