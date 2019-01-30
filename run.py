@@ -15,14 +15,13 @@ t = environ.get('TIMBER_TOKEN')
 
 # Never allow more than 50 outstanding log events in buffer and send any outstanding log events at most every 60 seconds
 logger = logging.getLogger(__name__)
-# timber_handler = timber.TimberHandler(api_key=t, level=logging.DEBUG, buffer_capacity=50, flush_interval=60, raise_exceptions=True)
-timber_handler = timber.TimberHandler(api_key=t, level=logging.DEBUG)
+timber_handler = timber.TimberHandler(api_key=t, level=logging.DEBUG, buffer_capacity=20, flush_interval=60, raise_exceptions=True)
 logger.addHandler(timber_handler)
 logger.debug('test msg')
 
 if x=='0':
     print('Starting web application')
-    logger.info('Starting web application as normal')
+    application.logger.info('Starting web application as normal')
     import subprocess
     # Attempt to run Gunicorn to serve the app
     try:
@@ -39,6 +38,6 @@ elif x=='2':
     # Run the Flask app server
     from flask import Flask
     from app import application
-    application.run(host='0.0.0.0', port=8080)
+    application.run(host='0.0.0.0', port=8080, debug=True)
 else:
     print('Invalid start-up configuration')
