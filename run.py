@@ -21,7 +21,7 @@ logger.debug('test msg')
 
 if x=='0':
     print('Starting web application')
-    application.logger.info('Starting web application as normal')
+    logger.info('Starting web application as normal')
     import subprocess
     # Attempt to run Gunicorn to serve the app
     try:

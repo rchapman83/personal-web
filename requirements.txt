@@ -3,5 +3,3 @@ flask==1.0.2
 setproctitle
 timber
 certbot
-twilio
-PyGithub
