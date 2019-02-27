@@ -57,7 +57,7 @@ def test():
     logger = logging.getLogger(__name__)
     timber_handler = timber.TimberHandler(api_key=t)
     logger.addHandler(timber_handler)
-    logger.info('test msg')
+    logger.warning('test msg')
     return render_template('test.html', chgLog=y)
 
 @application.route('/robots.txt')
