@@ -38,7 +38,7 @@ elif x=='1':
         r = requests.get('https://www.rnchapman.directory', timeout=0.005)
         r.url
     except ConnectionError as e:
-        print e
+        print('Connection error or no response')
         r = "No response"
         logger.error('Web application is manually disabled and a connection error occured' + e)
         quit()
