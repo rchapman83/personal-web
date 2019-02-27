@@ -51,5 +51,5 @@ elif x=='2':
     application.run(host='0.0.0.0', port=8080, debug=True)
 else:
     print('Invalid start-up configuration')
-    logger.critical('Invalid start-up configuration, quitting')
+    logger.critical('Invalid start-up configuration for run.py, quitting')
     quit()

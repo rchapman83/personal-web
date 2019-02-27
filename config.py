@@ -23,7 +23,7 @@ keepalive = 2
 forwarded_allow_ips = '*'
 # secure_scheme_headers = {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
 
-errorlog = '/mnt/data/logs/gunicorn/error/error.log'
+# errorlog = '/mnt/data/logs/gunicorn/error/error.log'
 loglevel = 'info'
-accesslog = '/mnt/data/logs/gunicorn/access/access.log'
+# accesslog = '/mnt/data/logs/gunicorn/access/access.log'
 access_log_format = '%(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"'
