@@ -31,12 +31,8 @@ def githubChg():
     gAccess = Github(gToken)
     repo = gAccess.get_repo(gRepo)
     repoInfo = 'The pull req nums are: '
-    pulls = repo.get_pulls(state='open', sort='created', base='dev')
-    for pr in pulls:
-        i = pr.number
-        repoInfo = repoInfo + i
-    #for repo in gAccess.get_user().get_repos():
-     #   i = repo.name
+    for repo in gAccess.get_user().get_repos():
+       # print(repo.name
       #  repoInfo = repoInfo + i
     return repoInfo
 
