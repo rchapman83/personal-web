@@ -40,6 +40,10 @@ def test():
     logger.warning('test msg')
     return render_template('test.html')
 
+@application.route('/status')
+def status_check():
+    return render_template('status.html'), 200
+    
 @application.route('/robots.txt')
 def robots_static():
     return send_from_directory(application.static_folder, request.path[1:])
