@@ -12,10 +12,11 @@ env_variables:
   FLASK_SETTINGS: 'settings.py'
   GRAV_USER: 'rchapman83@gmail.com'
   TIMBER_TOKEN: '123'
+  TIMBER_ID: '456'
   GIT_REPO: 'rchapman83/personal-web'
   GIT_TOKEN: '1243'
   
-entrypoint: gunicorn -c gunicorn.conf.py -b :$PORT app:application
+entrypoint: gunicorn -c $APP_CONFIG -b :$PORT $APP_MODULE
 
 # This sample incurs costs to run on the App Engine flexible environment.
 # The settings below are to reduce costs during testing and are not appropriate
