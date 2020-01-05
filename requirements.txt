@@ -1,2 +1,6 @@
-PyYAML
-coloredlogs
+gunicorn==19.9.0
+flask==1.1.1
+google-cloud-datastore==1.10.0
+setproctitle
+timber
+

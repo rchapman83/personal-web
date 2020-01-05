@@ -7,8 +7,6 @@ from . import application
 from flask import Flask, render_template, send_from_directory, request
 # Import os environment mods
 from os import environ
-# Import PyGitHub library to access the GitHub API v3
-from github import Github
 # Import code for encoding urls and generating md5 hashes
 import urllib, hashlib
 # Importing logging libs
@@ -23,23 +21,6 @@ def gravatar():
     gravURL = 'https://www.gravatar.com/avatar/' + hashlib.md5(gravEmail.encode('utf-8')).hexdigest() + '?s=150'
     return gravURL
 
-# Github function for changelog intergration on the colophon page
-def githubChg():
-    # Set personal access token generated from GitHub via an enviro var
-    gToken = environ.get('GIT_TOKEN')
-    gRepo = environ.get('GIT_REPO')
-    gAccess = Github(gToken)
-    repo = gAccess.get_repo(gRepo)
-    repoInfo = 'The pull req nums are: '
-    pulls = repo.get_pulls(state='open', sort='created', base='dev')
-    for pr in pulls:
-        i = pr.number
-        repoInfo = repoInfo + i
-    #for repo in gAccess.get_user().get_repos():
-     #   i = repo.name
-      #  repoInfo = repoInfo + i
-    return repoInfo
-
 @application.route('/')
 def entry():
     x = gravatar()
@@ -52,13 +33,12 @@ def colophon():
 
 @application.route('/test')
 def test():
-    y = githubChg()
     t = environ.get('TIMBER_TOKEN')
     logger = logging.getLogger(__name__)
     timber_handler = timber.TimberHandler(api_key=t)
     logger.addHandler(timber_handler)
     logger.warning('test msg')
-    return render_template('test.html', chgLog=y)
+    return render_template('test.html')
 
 @application.route('/robots.txt')
 def robots_static():
