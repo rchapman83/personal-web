@@ -4,13 +4,16 @@ runtime: python37
 #   python_version: 3
 
 env_variables:
+  # GAE_INSTANCE can also be used as proj name
   PROJECT_NAME: $GOOGLE_CLOUD_PROJECT
+  APP_VERSION: $GAE_VERSION
   APP_CONFIG: 'gunicorn.conf.py'
   APP_MODULE: 'app:application'
   FLASK_DEBUG: 'false'
   FLASK_SECRET: 'secret'
   FLASK_SETTINGS: 'settings.py'
   GRAV_USER: 'rchapman83@gmail.com'
+  GA_TRACKING_ID: 'UA-117445633-1'
   TIMBER_TOKEN: '123'
   TIMBER_ID: '456'
   GIT_REPO: 'rchapman83/personal-web'
@@ -28,6 +31,23 @@ entrypoint: gunicorn -c $APP_CONFIG -b :$PORT $APP_MODULE
 #   memory_gb: 0.5
 #  disk_size_gb: 10
 
+# Liveness checks confirm that the VM and the Docker container are running. 
+# Instances that are deemed unhealthy are restarted.
+liveness_check:
+  path: '/status'
+  check_interval_sec: 30
+  timeout_sec: 4
+  failure_threshold: 2
+  success_threshold: 2
+
+readiness_check:
+  path: '/status'
+  check_interval_sec: 5
+  timeout_sec: 4
+  failure_threshold: 2
+  success_threshold: 2
+  app_start_timeout_sec: 300
+
 handlers:
   # This configures Google App Engine to serve the files in the app's static
   # directory.
@@ -39,3 +59,16 @@ handlers:
   # the entire handlers section) when there are no static files defined.
 - url: /.*
   script: auto
+  
+skip_files:
+  # The skip_files element specifies which files in the application directory are
+  # not to be uploaded to App Engine. The value is either a regular expression, 
+  # or a list of regular expressions.
+- ^(.*/)?\.bak$
+
+# network:
+#  forwarded_ports:
+    # Port forwarding allows for direct connections to the Docker container on your instances.
+    # This traffic can travel over any protocol. Port forwarding is intended to help with 
+    # situations where you might need to attach a debugger or profiler.
+#    - 2222/tcp
