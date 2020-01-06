@@ -14,8 +14,6 @@ env_variables:
   FLASK_SETTINGS: 'settings.py'
   GRAV_USER: 'rchapman83@gmail.com'
   GA_TRACKING_ID: 'UA-117445633-1'
-  TIMBER_TOKEN: '123'
-  TIMBER_ID: '456'
   GIT_REPO: 'rchapman83/personal-web'
   GIT_TOKEN: '1243'
   
@@ -59,13 +57,9 @@ handlers:
   # the entire handlers section) when there are no static files defined.
 - url: /.*
   script: auto
+  secure: always
+  redirect_http_response_code: 301
   
-skip_files:
-  # The skip_files element specifies which files in the application directory are
-  # not to be uploaded to App Engine. The value is either a regular expression, 
-  # or a list of regular expressions.
-- ^(.*/)?\.bak$
-
 # network:
 #  forwarded_ports:
     # Port forwarding allows for direct connections to the Docker container on your instances.
