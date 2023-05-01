@@ -1,5 +1,5 @@
 gunicorn==19.9.0
-flask==1.1.1
+flask==2.3.2
 google-cloud-datastore==1.10.0
 google-cloud-logging==1.14.0
 setproctitle
