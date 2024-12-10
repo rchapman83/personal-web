@@ -43,7 +43,9 @@ steps:
            '--region', 'australia-southeast1', '--platform', 'managed', 
            '--allow-unauthenticated']
   # [END cloudbuild_python_deploy_yaml]
-  
+substitutions:
+    _ARTIFACT_REGISTRY_REPO: pw-artifacts
+    _BUCKET_NAME: pw-testlogs
 # [START cloudbuild_python_logs_yaml]
 # Save test logs to Google Cloud Storage
 artifacts:
