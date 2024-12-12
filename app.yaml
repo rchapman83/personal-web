@@ -8,8 +8,8 @@ env_variables:
   # GAE_INSTANCE can also be used as proj name
   PROJECT_NAME: $GOOGLE_CLOUD_PROJECT
   APP_VERSION: $GAE_VERSION
-  APP_CONFIG: 'gunicorn.conf.py'
-  APP_MODULE: 'app:application'
+  # APP_MODULE: 'app:application'
+  # PORT: '8080'
   FLASK_DEBUG: 'false'
   FLASK_SECRET: 'secretkey'
   FLASK_SETTINGS: 'settings.py'
@@ -18,7 +18,8 @@ env_variables:
   GIT_REPO: 'zzzz/xxxx'
   GIT_TOKEN: '1243'
   
-entrypoint: gunicorn -c $APP_CONFIG -b :$PORT $APP_MODULE
+# entrypoint: gunicorn -c $APP_CONFIG -b :$PORT $APP_MODULE
+entrypoint: gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 $APP_MODULE
 
 # This sample incurs costs to run on the App Engine flexible environment.
 # The settings below are to reduce costs during testing and are not appropriate
