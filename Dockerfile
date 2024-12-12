@@ -4,7 +4,7 @@ FROM python:3.12
 # Set OS environment variables
 ENV APP_HOME /usr/local/app
 ENV APP_MODULE app:application
-ENV PORT 8080
+ENV APP_PORT 8080
 
 # Specify the working directory
 WORKDIR $APP_HOME
@@ -28,4 +28,4 @@ USER app
 # For environments with multiple CPU cores, increase the number of workers
 # to be equal to the cores available.
 # CMD exec gunicorn -c $APP_CONFIG -b :$PORT $APP_MODULE
-CMD exec gunicorn --bind :$PORT --workers 2 --threads 8 --timeout 0 $APP_MODULE
+CMD exec gunicorn --bind :$APP_PORT --workers 2 --threads 8 --timeout 0 $APP_MODULE
