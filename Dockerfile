@@ -28,4 +28,4 @@ USER app
 # For environments with multiple CPU cores, increase the number of workers
 # to be equal to the cores available.
 # CMD exec gunicorn -c $APP_CONFIG -b :$PORT $APP_MODULE
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 $APP_MODULE
+CMD exec gunicorn --bind :$PORT --workers 2 --threads 8 --timeout 0 $APP_MODULE
