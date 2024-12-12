@@ -1,5 +1,5 @@
 runtime: python
-env: standard
+env: flex
 runtime_config:
     operating_system: 'ubuntu22'
     runtime_version: '3.12'
@@ -35,18 +35,31 @@ entrypoint: gunicorn --bind :$APP_PORT --workers 1 --threads 8 --timeout 0 $APP_
 # Instances that are deemed unhealthy are restarted.
 liveness_check:
   path: '/status'
-  check_interval_sec: 30
+  initial_delay_sec: 300
+  check_interval_sec: 60
   timeout_sec: 4
-  failure_threshold: 2
+  failure_threshold: 3
   success_threshold: 2
 
 readiness_check:
   path: '/status'
-  check_interval_sec: 5
+  check_interval_sec: 30
   timeout_sec: 4
-  failure_threshold: 2
+  failure_threshold: 3
   success_threshold: 2
-  app_start_timeout_sec: 300
+  app_start_timeout_sec: 600
+
+# Specifies which files in the application directory are not to be uploaded to App Engine.
+skip_files:
+- ^.*\.bak$
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 2
+  cool_down_period_sec: 180
+  cpu_utilization:
+    target_utilization: 0.8
+  target_concurrent_requests: 100
 
 handlers:
   # This configures Google App Engine to serve the files in the app's static
