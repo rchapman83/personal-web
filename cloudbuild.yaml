@@ -7,6 +7,7 @@ steps:
   - name: python
     entrypoint: pip
     args: ['install', '-r', 'requirements.txt', '--user']
+    id: 'install python dependencies'
   # [END cloudbuild_python_dependencies_yaml]
 
   # [START cloudbuild_python_tests_yaml]
@@ -20,6 +21,7 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', 'app.yaml', '--project=personal-web-264205', '--version=$SHORT_SHA']
     timeout: '1600s'
+    id: 'deploy to app engine'
   # [END cloudbuild_python_deploy_yaml]
 
   # [START cloudbuild_python_image_yaml]
