@@ -19,7 +19,7 @@ steps:
   # [START cloudbuild_python_deploy_yaml]
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', 'app.yaml', '--project=personal-web-264205', '--version=$SHORT_SHA']
-  timeout: '1600s'
+  # timeout: '1600s'
   # [END cloudbuild_python_deploy_yaml]
 
   # [START cloudbuild_python_image_yaml]
