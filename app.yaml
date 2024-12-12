@@ -9,7 +9,7 @@ env_variables:
   PROJECT_NAME: $GOOGLE_CLOUD_PROJECT
   APP_VERSION: $GAE_VERSION
   APP_MODULE: 'app:application'
-  APP_PORT: '8080'
+  APP_PORT: '80'
   FLASK_DEBUG: 'false'
   FLASK_SECRET: 'secretkey'
   FLASK_SETTINGS: 'settings.py'
