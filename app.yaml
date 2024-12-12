@@ -8,8 +8,8 @@ env_variables:
   # GAE_INSTANCE can also be used as proj name
   PROJECT_NAME: $GOOGLE_CLOUD_PROJECT
   APP_VERSION: $GAE_VERSION
-  # APP_MODULE: 'app:application'
-  # PORT: '8080'
+  APP_MODULE: 'app:application'
+  PORT: '8080'
   FLASK_DEBUG: 'false'
   FLASK_SECRET: 'secretkey'
   FLASK_SETTINGS: 'settings.py'
