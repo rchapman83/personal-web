@@ -9,21 +9,6 @@ from flask import Flask, render_template, send_from_directory, request
 from os import environ
 # Import code for encoding urls and generating md5 hashes
 import urllib, hashlib
-# Importing python logging libs
-import logging
-# Imports the Google Cloud client library
-import google.cloud.logging
-from google.cloud.logging.handlers import CloudLoggingHandler
-
-# Instantiates a logging client and handler
-client = google.cloud.logging.Client()
-handler = CloudLoggingHandler(client)
-
-# Configure logger and handler
-cloud_logger = logging.getLogger('cloudLogger')
-cloud_logger.setLevel(logging.INFO)
-cloud_logger.addHandler(handler)
-cloud_logger.error('Test MGS - bad news')
 
 # Define custom functions
 # Funtion to generate the URL my gravatar profile picture on the home page
