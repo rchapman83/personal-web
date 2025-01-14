@@ -4,7 +4,7 @@ FROM python:3.12
 # Set OS environment variables
 ENV APP_HOME /usr/local/app
 ENV APP_MODULE app:application
-ENV APP_PORT 8080
+ENV APP_PORT 80
 
 # Specify the working directory
 WORKDIR $APP_HOME
@@ -17,7 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . ./
 
 # Sets configuration on the image that indicates a port the image would like to expose.
-EXPOSE 8080
+EXPOSE 80
 
 # Setup an app user so the container doesn't run as the root user
 RUN useradd app
