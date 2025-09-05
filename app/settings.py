@@ -7,6 +7,12 @@ proj_name = environ.get('PROJECT_NAME')
 debug_mode = environ.get('FLASK_DEBUG')
 secret_code = environ.get('FLASK_SECRET')
 
+"""
+proj_name = 'Personal Web'
+debug_mode = 'true'
+secret_code = 'verysecretkey'
+"""
+
 DEBUG = debug_mode
 TESTING = debug_mode
 USE_X_SENDFILE = False
