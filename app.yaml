@@ -9,7 +9,7 @@ env_variables:
   PROJECT_NAME: $GOOGLE_CLOUD_PROJECT
   APP_VERSION: $GAE_VERSION
   APP_MODULE: 'app:application'
-  APP_PORT: '80'
+  APP_PORT: '8080'
   FLASK_DEBUG: 'false'
   FLASK_SECRET: 'secretkey'
   FLASK_SETTINGS: 'settings.py'
@@ -19,7 +19,8 @@ env_variables:
   GIT_TOKEN: '1243'
   
 # entrypoint: gunicorn -c $APP_CONFIG -b :$PORT $APP_MODULE
-entrypoint: gunicorn --bind :$APP_PORT --workers 1 --threads 8 --timeout 0 $APP_MODULE
+# entrypoint: gunicorn --bind :$APP_PORT --workers 1 --threads 8 --timeout 0 $APP_MODULE
+entrypoint: gunicorn --bind :8080 --workers 1 --threads 8 --timeout 0 app:application
 
 # This sample incurs costs to run on the App Engine flexible environment.
 # The settings below are to reduce costs during testing and are not appropriate
@@ -68,10 +69,12 @@ handlers:
   static_dir: static
   http_headers: 
     X-Forwarded-Proto: https
-    X-Forwarded-For: client1
+    X-Forwarded-For: clientIp
     X-Frame-Options: sameorigin
     X-XSS-Protection: 1; mode=block
     X-UA-Compatible: IE=edge
+    Cache-Control: no-cache
+    Referrer-Policy: same-origin
     Access-Control-Allow-Origin: https://www.rnchapman.pw, https://www.rnchapman.me
 
   # This handler routes all requests not caught above to your main app. It is
