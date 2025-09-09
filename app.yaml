@@ -2,7 +2,7 @@ runtime: python
 env: flex
 runtime_config:
     operating_system: 'ubuntu22'
-    runtime_version: '3.12'
+    runtime_version: '3.13'
 
 env_variables:
   # GAE_INSTANCE can also be used as proj name
@@ -20,7 +20,7 @@ env_variables:
   
 # entrypoint: gunicorn -c $APP_CONFIG -b :$PORT $APP_MODULE
 # entrypoint: gunicorn --bind :$APP_PORT --workers 1 --threads 8 --timeout 0 $APP_MODULE
-entrypoint: gunicorn --bind :8080 --workers 1 --threads 8 --timeout 0 app:application
+entrypoint: gunicorn --bind :8080 app:application
 
 # This sample incurs costs to run on the App Engine flexible environment.
 # The settings below are to reduce costs during testing and are not appropriate
