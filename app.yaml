@@ -22,6 +22,8 @@ env_variables:
 # entrypoint: gunicorn --bind :$APP_PORT --workers 1 --threads 8 --timeout 0 $APP_MODULE
 entrypoint: gunicorn --bind :8080 --workers 2 app:application
 
+instance_class: F1
+
 # This sample incurs costs to run on the App Engine flexible environment.
 # The settings below are to reduce costs during testing and are not appropriate for production use. 
 manual_scaling:
@@ -60,6 +62,9 @@ readiness_check:
 # Specifies which files in the application directory are not to be uploaded to App Engine.
 skip_files:
 - ^.*\.bak$
+
+# Sets a global default cache period for all static file handlers for an application. Default is 10mins
+#default_expiration: '1d 6h'
 
 handlers:
   # This configures Google App Engine to serve the files in the app's static
