@@ -20,25 +20,24 @@ env_variables:
   
 # entrypoint: gunicorn -c $APP_CONFIG -b :$PORT $APP_MODULE
 # entrypoint: gunicorn --bind :$APP_PORT --workers 1 --threads 8 --timeout 0 $APP_MODULE
-entrypoint: gunicorn --bind :8080 app:application
+entrypoint: gunicorn --bind :8080 --workers 2 app:application
 
 # This sample incurs costs to run on the App Engine flexible environment.
-# The settings below are to reduce costs during testing and are not appropriate
-# for production use. 
-# manual_scaling:
-#   instances: 1
-# resources:
-#   cpu: 1
-#   memory_gb: 0.5
-#  disk_size_gb: 10
+# The settings below are to reduce costs during testing and are not appropriate for production use. 
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
 
-automatic_scaling:
-  min_num_instances: 1
-  max_num_instances: 2
-  cool_down_period_sec: 180
-  cpu_utilization:
-    target_utilization: 0.8
-  target_concurrent_requests: 100
+#automatic_scaling:
+#  min_num_instances: 1
+#  max_num_instances: 2
+#  cool_down_period_sec: 180
+#  cpu_utilization:
+#    target_utilization: 0.8
+#  target_concurrent_requests: 100
 
 # Liveness checks confirm that the VM and the Docker container are running. 
 # Instances that are deemed unhealthy are restarted.
@@ -85,14 +84,12 @@ handlers:
   secure: always
   redirect_http_response_code: 301
   
-# network:
-#  forwarded_ports:
-    # Port forwarding allows for direct connections to the Docker container on your instances.
-    # This traffic can travel over any protocol. Port forwarding is intended to help with 
-    # situations where you might need to attach a debugger or profiler.
-#    - 2222/tcp
+error_handlers:
+# Custom error pages that are returned for different error types so I know whats up.
+  - file: default_error.html
 
-# The Python 2 SDK includes a number of built-in handlers for common application functions
-# builtins:
-#  - deferred: on
-#  - appstats: on
+  - error_code: over_quota
+    file: over_quota.html
+
+  - error_code: timeout
+    file: timeout.html 
