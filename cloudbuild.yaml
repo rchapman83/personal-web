@@ -19,7 +19,7 @@ steps:
 
   # [START cloudbuild_python_deploy_yaml]
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['app', 'deploy', 'app.yaml', '--project=personal-web-264205', '--version=$SHORT_SHA']
+    args: ['app', 'deploy', 'app.yaml', '--project=personal-web-264205', '--version=$SHORT_SHA', '--verbosity=debug']
     timeout: '1600s'
     id: 'deploy to app engine'
   # [END cloudbuild_python_deploy_yaml]
@@ -45,11 +45,11 @@ steps:
   #         '--region', 'australia-southeast1', '--platform', 'managed', 
   #         '--allow-unauthenticated']
   # [END cloudbuild_python_deploy_yaml]
-substitutions:
-    _ARTIFACT_REGISTRY_REPO: pw-artifacts
-    _BUCKET_NAME: pw-testlogs
+#substitutions:
+#   _ARTIFACT_REGISTRY_REPO: pw-artifacts
+#    _BUCKET_NAME: pw-testlogs
 
 # Store images in Google Artifact Registry 
-images:
+# images:
 #  - australia-southeast1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}
 # [END cloudbuild_python_yaml]
