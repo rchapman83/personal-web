@@ -26,27 +26,27 @@ instance_class: F1
 
 # This sample incurs costs to run on the App Engine flexible environment.
 # The settings below are to reduce costs during testing and are not appropriate for production use. 
-manual_scaling:
-  instances: 1
-resources:
-  cpu: 1
-  memory_gb: 0.5
-  disk_size_gb: 10
+#manual_scaling:
+#  instances: 1
+#resources:
+#  cpu: 1
+#  memory_gb: 0.5
+#  disk_size_gb: 10
 
-#automatic_scaling:
-#  min_num_instances: 1
-#  max_num_instances: 2
-#  cool_down_period_sec: 180
-#  cpu_utilization:
-#    target_utilization: 0.8
-#  target_concurrent_requests: 100
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 2
+  cool_down_period_sec: 180
+  cpu_utilization:
+    target_utilization: 0.8
+  target_concurrent_requests: 100
 
 # Liveness checks confirm that the VM and the Docker container are running. 
 # Instances that are deemed unhealthy are restarted.
 liveness_check:
   path: '/liveness_check'
-  initial_delay_sec: 300
-  check_interval_sec: 60
+  initial_delay_sec: 600
+  check_interval_sec: 30
   timeout_sec: 4
   failure_threshold: 3
   success_threshold: 2
@@ -57,7 +57,7 @@ readiness_check:
   timeout_sec: 4
   failure_threshold: 3
   success_threshold: 2
-  app_start_timeout_sec: 600
+  app_start_timeout_sec: 300
 
 # Specifies which files in the application directory are not to be uploaded to App Engine.
 skip_files:
