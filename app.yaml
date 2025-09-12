@@ -44,20 +44,20 @@ automatic_scaling:
 # Liveness checks confirm that the VM and the Docker container are running. 
 # Instances that are deemed unhealthy are restarted.
 liveness_check:
-  path: '/liveness_check'
-  initial_delay_sec: 600
+#  path: '/liveness_check'
+  initial_delay_sec: 1800
   check_interval_sec: 30
   timeout_sec: 4
   failure_threshold: 3
   success_threshold: 2
 
 readiness_check:
-  path: '/readiness_check'
+#  path: '/readiness_check'
   check_interval_sec: 30
   timeout_sec: 4
   failure_threshold: 3
   success_threshold: 2
-  app_start_timeout_sec: 300
+  app_start_timeout_sec: 1600
 
 # Specifies which files in the application directory are not to be uploaded to App Engine.
 skip_files:
