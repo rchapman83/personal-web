@@ -44,7 +44,7 @@ automatic_scaling:
 # Liveness checks confirm that the VM and the Docker container are running. 
 # Instances that are deemed unhealthy are restarted.
 liveness_check:
-#  path: '/liveness_check'
+  path: '/status'
   initial_delay_sec: 1800
   check_interval_sec: 30
   timeout_sec: 4
@@ -52,7 +52,7 @@ liveness_check:
   success_threshold: 2
 
 readiness_check:
-#  path: '/readiness_check'
+  path: '/status'
   check_interval_sec: 30
   timeout_sec: 4
   failure_threshold: 3
