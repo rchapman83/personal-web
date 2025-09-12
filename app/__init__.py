@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Entry point to bring up the web app
+# Entry point to bring up the web app __init__
 
 # Flask mod imports
 from flask import Flask
