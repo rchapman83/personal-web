@@ -45,19 +45,19 @@ automatic_scaling:
 # Instances that are deemed unhealthy are restarted.
 liveness_check:
   path: '/status'
-  initial_delay_sec: 1800
+  initial_delay_sec: 1200
   check_interval_sec: 30
-  timeout_sec: 4
+  timeout_sec: 2
   failure_threshold: 3
   success_threshold: 2
 
 readiness_check:
   path: '/status'
   check_interval_sec: 30
-  timeout_sec: 4
+  timeout_sec: 2
   failure_threshold: 3
   success_threshold: 2
-  app_start_timeout_sec: 1600
+  app_start_timeout_sec: 900
 
 # Specifies which files in the application directory are not to be uploaded to App Engine.
 skip_files:

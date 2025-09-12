@@ -1,7 +1,6 @@
 
 # Build from GCP CloudBuild samples - github.com/GoogleCloudPlatform/cloud-build-samples/tree/main/python-example-flask
 # [START cloudbuild_python_yaml]
-# [START cloudbuild_python_dependencies_yaml]
 steps:
   # Install dependencies
 #  - name: python
@@ -23,33 +22,4 @@ steps:
     timeout: '1600s'
     id: 'deploy to app engine'
   # [END cloudbuild_python_deploy_yaml]
-
-  # [START cloudbuild_python_image_yaml]
-  # Docker Build
-  #- name: 'gcr.io/cloud-builders/docker'
-  #  args: ['build', '-t', 
-  #         'australia-southeast1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}', '.']
-  # [END cloudbuild_python_image_yaml]
-
-  # [START cloudbuild_python_push_yaml]
-  # Docker push to Google Artifact Registry
-  #- name: 'gcr.io/cloud-builders/docker'
-  #  args: ['push',  'australia-southeast1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}']
-  # [END cloudbuild_python_push_yaml]
-  
-  # [START cloudbuild_python_deploy_yaml]
-  # Deploy to Cloud Run
-  #- name: google/cloud-sdk
-  #  args: ['gcloud', 'run', 'deploy', 'personalweb-${SHORT_SHA}', 
-  #         '--image=australia-southeast1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}', 
-  #         '--region', 'australia-southeast1', '--platform', 'managed', 
-  #         '--allow-unauthenticated']
-  # [END cloudbuild_python_deploy_yaml]
-#substitutions:
-#   _ARTIFACT_REGISTRY_REPO: pw-artifacts
-#    _BUCKET_NAME: pw-testlogs
-
-# Store images in Google Artifact Registry 
-# images:
-#  - australia-southeast1-docker.pkg.dev/${PROJECT_ID}/${_ARTIFACT_REGISTRY_REPO}/myimage:${SHORT_SHA}
 # [END cloudbuild_python_yaml]
