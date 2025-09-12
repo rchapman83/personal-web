@@ -14,8 +14,7 @@ import urllib, hashlib
 # Funtion to generate the URL my gravatar profile picture on the home page
 def gravatar():
     # Set your desired email from environ var, must be lower case
-    #gravEmail = environ.get('GRAV_USER')
-    gravEmail = 'rchapman83@gmail.com'
+    gravEmail = environ.get('GRAV_USER')
     # construct the url
     gravURL = 'https://www.gravatar.com/avatar/' + hashlib.md5(gravEmail.encode('utf-8')).hexdigest() + '?s=150'
     return gravURL
