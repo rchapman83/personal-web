@@ -19,6 +19,10 @@ header {
             color: #ffffff;
 }
 
+.table-borderless {
+    background-color: transparent !important;
+}
+
 section {
   padding: 100px 0;
 }
