@@ -10,7 +10,6 @@ env_variables:
   APP_VERSION: $GAE_VERSION
   APP_MODULE: 'app:application'
   APP_PORT: '8080'
-  FLASK_DEBUG: 'false'
   FLASK_SECRET: 'secretkey'
   FLASK_SETTINGS: 'settings.py'
   GRAV_USER: 'rchapman83@gmail.com'
