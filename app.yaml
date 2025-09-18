@@ -10,7 +10,6 @@ env_variables:
   APP_VERSION: $GAE_VERSION
   APP_MODULE: 'app:application'
   APP_PORT: '8080'
-  FLASK_DEBUG: 'false'
   FLASK_SECRET: 'secretkey'
   FLASK_SETTINGS: 'settings.py'
   GRAV_USER: 'rchapman83@gmail.com'
@@ -18,9 +17,7 @@ env_variables:
   GIT_REPO: 'zzzz/xxxx'
   GIT_TOKEN: '1243'
   
-# entrypoint: gunicorn -c $APP_CONFIG -b :$PORT $APP_MODULE
-# entrypoint: gunicorn --bind :$APP_PORT --workers 1 --threads 8 --timeout 0 $APP_MODULE
-entrypoint: gunicorn --bind :8080 --workers 2 app:application
+entrypoint: gunicorn --bind :$APP_PORT --workers 2 --threads 8 --timeout 0 $APP_MODULE
 
 instance_class: F1
 

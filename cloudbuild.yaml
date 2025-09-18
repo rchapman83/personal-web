@@ -17,8 +17,9 @@ steps:
   # [END cloudbuild_python_tests_yaml]
 
   # [START cloudbuild_python_deploy_yaml]
+  # Use '--verbosity=debug' arg for more info on errors
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['app', 'deploy', 'app.yaml', '--project=personal-web-264205', '--version=$SHORT_SHA', '--verbosity=debug']
+    args: ['app', 'deploy', 'app.yaml', '--project=personal-web-264205', '--version=$SHORT_SHA']
     timeout: '1600s'
     id: 'deploy to app engine'
   # [END cloudbuild_python_deploy_yaml]

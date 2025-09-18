@@ -7,3 +7,5 @@ Disallow: /static/js/
 Disallow: /static/fonts/
 Disallow: /cgi-bin/
 Disallow: /tmp/
+Disallow: /status/
+Disallow: /.venv/

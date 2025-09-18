@@ -3,14 +3,25 @@
 <head>
     {% block head %}
     <!-- Headers and Meta Data –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="en">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Rowan Chapman">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv='Cache-Control' content='no-cache'>
+    <meta name="revisit-after" content="180 days">
+    <meta name="copyright" content="Rowan Chapman">
     <meta name="description" content="The personal website of Rowan Chapman - IT Pro">
-    <meta name="keyphrases" content="Rowan Chapman, Rowan Chapman PW, ron chapman, rob chapman, Ro Ro,  Rowan Chapman personal website, Rowan Chapman personal web, Aireys Inlet Network Engineer, Rowan Chapman micro site, origin of the name rowan, rowan name origin, rowan tree">
+    <meta name="keyphrases" content="Rowan Chapman, Rowan Chapman PW, Ro Ro, network engineer, cybersecurity, cybersecurity specialist,Rowan Chapman personal website, Rowan Chapman personal web, Rowan Aireys Inlet, Rowan Chapman micro site, rowan name origin">
     <meta name="keywords" content="Rowan, Chapman, Chappy, rnchapman, rchapman83, hacker, Nathanial, technologist, chapmanrowan, IT, Row, Ro, RoRo, Rojo, Melbourne, Australia">
+    <!-- Open Graph  --------------–––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rnnchapman.pw/" />
+    <meta property="og:title" content="Rowan Chapman [Personal Website]" />
+    <meta property="og:description" content="The personal website of Rowan Chapman - IT Pro" />
+    <meta property="og:image" content="{{ url_for('static', filename='img/favicon.png') }}" />
     <!-- Favicon --------------–––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}">
     <!-- Humans TXT --------------––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -20,7 +31,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
     <!-- Font --------------––––––––––––––––––––––––––––––––––––---––––––-----––– -->
     <link href="https://fonts.googleapis.com/css?family=Bangers|Montserrat" rel="stylesheet"> 
-    
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117445633-1"></script>
     <script>
