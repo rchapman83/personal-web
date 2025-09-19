@@ -1,122 +1,63 @@
 {% extends "base.html" %}
 {% block title %}Rowan Chapman [Personal Website]{% endblock %}
 {% block content %}
-    <!-- Begin page content -->
-    
-    <!-- Navigation -->
-    <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">rnchapman.pw</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMarkup" aria-controls="navbarMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarMarkup">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#about">About</a>
-      	    </li>
-      	    <li class="nav-item">
-        	   <a class="nav-link" href="#contact">Contact</a>
-        	</li>
-        	<li class="nav-item">
-        	   <a class="nav-link" href="/colophon">Colophon</a>
-      	    </li>
-        </ul>
+    <!-- Center the container vertically and horizontally -->
+    <div class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="container">
+            <header>
+                <h1>&gt;_ John Doe</h1>
+                <p>Network Engineer &amp; Cybersecurity Specialist</p>
+            </header>
+
+            <!-- Navigation Bar (now under header and same width) -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-success rounded mb-4">
+              <div class="container-fluid px-0">
+                <a class="navbar-brand" href="#"><span class="text-success">&gt;_</span> John Doe</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="https://github.com/johndoe" target="_blank">GitHub</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <main>
+                <div class="terminal-box mt-5">
+                    <code>
+                        $ whoami<span class="terminal-cursor"></span><br>
+                        johndoe<br><br>
+                        $ echo "Welcome to my digital lair!"<span class="terminal-cursor"></span><br>
+                        Welcome to my digital lair!<br><br>
+                        $ cat skills.txt<span class="terminal-cursor"></span><br>
+                        - Network Engineering<br>
+                        - Cybersecurity<br>
+                        - Automation &amp; Scripting<br>
+                        - Linux &amp; Cloud<br>
+                    </code>
+                    <div class="mt-4" id="contact">
+                        <a href="mailto:john@example.com" class="btn btn-hacker me-2">Contact</a>
+                        <a href="https://github.com/johndoe" class="btn btn-hacker" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </main>
+
+            <footer>
+                &copy; 2025 John Doe &mdash; Inspired by 90's computing &amp; hacker culture
+            </footer>
         </div>
-    </nav>
     </div>
-    <!-- Header -->
-    <header>
-        <div class="container text-center">
-            <h1 class="display-1">
-                Rowan Chapman
-            </h1>
-            <h4>
-               IT Pro // Hacker // Drinker of Ales
-            </h4>
-        </div>
-    </header>
-
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Hello, I'm Rowan.</h2>
-            <br>
-            <img src="{{ profilePic }}" alt="Gravatar" class="rounded float-left mr-3">
-            <p>
-                My firends call me Chappy, i'm a network engineer and cybersecurity enthusiast with a passion for building secure, reliable systems. 
-                With years of experience navigating the complex landscape of IT, I specialize in designing networks that won't drop the ball—and certainly won't drop the packets either! 
-                Whether it's crafting resilient network architectures or safeguarding data against the latest security threats, I enjoy solving problems and keeping systems running smoothly.
-            </p>
-            <p>
-                If you're looking for someone who can fortify your infrastructure while keeping the digital gremlins at bay, you've come to the right place. Let's connect and create something secure, scalable, and future-proof.
-            </p> 
-            <br>
-            <p class="lead">
-                Hey, so if you'd like to check out some other stuff i've made you can find a full list <a href="https://www.rnchapman.directory">here <i data-feather="external-link" height="12" width="12"></i></a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Contact</h2>
-            <p class="lead">You can hit me up via which ever social media platform is your fav.</p>
-            <br>
-            <!-- Glyths from feathericons.com-->
-            <table class="table table-borderless">
-            <tbody>
-            <tr>
-                <td>
-                    <i data-feather="facebook" color="#007bff"></i>
-                </td>
-                <td>
-                    <a href="https://www.facebook.com/rnchapman" alt="Facebook"><span class="align-middle">rnchapman</span></a>
-                </td>
-                <td>
-                    <i data-feather="twitter" color="#007bff"></i>
-                </td>
-                <td>
-                    <a href="https://twitter.com/rchapman83" alt="Twitter"><span class="align-middle">rchapman83</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <i data-feather="instagram" color="#007bff"></i>
-                </td>
-                <td>
-                    <a href="https://www.instagram.com/chapmanrowan/" alt="Instagram"><span class="align-middle">chapmanrowan</span></a>
-                </td>
-                <td>
-                    <i data-feather="github" color="#007bff"></i>
-                </td>
-                <td>
-                    <a href="https://github.com/rchapman83/" alt="GitHub"><span class="align-middle">rchapman83</span></a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <i data-feather="key" color="#007bff"></i>
-                </td>
-                <td>
-                    <a href="https://keybase.io/rnchapman" alt="PGP"><span class="align-middle">PGP (8BF1 B07D 75CB AB43)</span></a>    
-                </td>
-                <td>
-                    <i data-feather="linkedin" color="#007bff"></i>
-                </td>
-                <td>
-                    <a href="https://www.linkedin.com/in/rowan-chapman-b0686895" alt="LinkedIn"><span class="align-middle">LinkedIn</span></a> 
-                </td>
-            </tr>
-            </tbody>
-            </table> 
-          </div>
-        </div>
-      </div>
-    </section>
 {% endblock %}
