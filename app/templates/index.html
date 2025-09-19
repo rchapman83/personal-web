@@ -1,34 +1,38 @@
 {% extends "base.html" %}
 {% block title %}Rowan Chapman [Personal Website]{% endblock %}
 {% block content %}
+
     <!-- Center the container vertically and horizontally -->
     <div class="d-flex align-items-center justify-content-center min-vh-100">
         <div class="container">
             <header>
-                <h1>&gt;_ John Doe</h1>
-                <p>Network Engineer &amp; Cybersecurity Specialist</p>
+                <h1>&gt;&#95; Rowan Chapman</h1>
+                <p>Network Engineer &vert; Cybersecurity Specialist &vert; Drinker of Ales</p>
             </header>
 
             <!-- Navigation Bar (now under header and same width) -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-success rounded mb-4">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-hacker mb-4">
               <div class="container-fluid px-0">
-                <a class="navbar-brand" href="#"><span class="text-success">&gt;_</span> John Doe</a>
+                <a class="navbar-brand" href="#"><span class="text-success">Nav &#47;&#47;</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      <a class="nav-link active" aria-current="page" href="#" data-content="home">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#skills">Skills</a>
+                      <a class="nav-link" href="#blog" data-content="blog">Blog</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#contact">Contact</a>
+                      <a class="nav-link" href="#projects" data-content="projects">Projects</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="https://github.com/johndoe" target="_blank">GitHub</a>
+                      <a class="nav-link" href="#contact" data-content="contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/colophon">Colophon</a>
                     </li>
                   </ul>
                 </div>
@@ -36,8 +40,8 @@
             </nav>
 
             <main>
-                <div class="terminal-box mt-5">
-                    <code>
+                <div class="terminal-box mt-5" id="terminal-box">
+                    <code id="terminal-content">
                         $ whoami<span class="terminal-cursor"></span><br>
                         johndoe<br><br>
                         $ echo "Welcome to my digital lair!"<span class="terminal-cursor"></span><br>
@@ -48,16 +52,69 @@
                         - Automation &amp; Scripting<br>
                         - Linux &amp; Cloud<br>
                     </code>
-                    <div class="mt-4" id="contact">
-                        <a href="mailto:john@example.com" class="btn btn-hacker me-2">Contact</a>
-                        <a href="https://github.com/johndoe" class="btn btn-hacker" target="_blank">GitHub</a>
-                    </div>
                 </div>
             </main>
 
             <footer>
-                &copy; 2025 John Doe &mdash; Inspired by 90's computing &amp; hacker culture
+                &copy; 2025 Rowan Chapman &mdash; Inspired by 90's computing &amp; hacker culture.
             </footer>
         </div>
     </div>
+
+    <script>
+    // filepath: /workspaces/personal-web/app/templates/index.html
+    // Terminal content for each navbar item
+    const terminalContents = {
+        home: `
+            $ whoami<span class="terminal-cursor"></span><br>
+            rowan<br><br>
+            $ echo "Welcome to my digital lair!"<span class="terminal-cursor"></span><br>
+            Welcome to my digital lair!<br><br>
+            $ cat skills.txt<span class="terminal-cursor"></span><br>
+            - Network Engineering<br>
+            - Cybersecurity<br>
+            - Automation &amp; Scripting<br>
+            - Linux &amp; Cloud<br>
+        `,
+        blog: `
+            $ cat blog.txt<span class="terminal-cursor"></span><br>
+            - "How to Secure Your Network"<br>
+            - "Automating with Python"<br>
+            - "Linux Tips &amp; Tricks"<br>
+            <br>
+            $ echo "More posts coming soon..."<span class="terminal-cursor"></span>
+        `,
+        projects: `
+            $ ls projects/<span class="terminal-cursor"></span><br>
+            firewall-automation.py<br>
+            pentest-toolkit.sh<br>
+            homelab-ansible/<br>
+            <br>
+            $ echo "See my GitHub for more!"<span class="terminal-cursor"></span>
+        `,
+        contact: `
+            $ mail -s "Hello Rowan" rowan@example.com<span class="terminal-cursor"></span><br>
+            <br>
+            $ echo "Let's connect!"<span class="terminal-cursor"></span><br>
+            <a href="mailto:john@example.com" class="btn btn-hacker me-2">Contact</a>
+            <a href="https://github.com/johndoe" class="btn btn-hacker" target="_blank">GitHub</a>
+        `
+    };
+
+    // Listen for navbar clicks and update terminal content
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.nav-link[data-content]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Remove 'active' from all nav links
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                // Add 'active' to clicked link
+                this.classList.add('active');
+                // Update terminal content
+                const contentKey = this.getAttribute('data-content');
+                document.getElementById('terminal-content').innerHTML = terminalContents[contentKey] || '';
+            });
+        });
+    });
+    </script>
 {% endblock %}

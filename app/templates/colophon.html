@@ -2,59 +2,69 @@
 {% block title %}[rnchapman.pw] > Colophon {% endblock %}
 {% block content %}
     <!-- Begin page content -->
-    
-    <!-- Navigation -->
-    <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="/">rnchapman.pw</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <!-- Nothing to see here -->
-            </div>
+    <!-- Center the container vertically and horizontally -->
+    <div class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="container">
+            <header>
+                <h1>&gt;&#95; Colophon</h1>
+            </header>
+
+            <!-- Navigation Bar (now under header and same width) -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-success rounded mb-4">
+              <div class="container-fluid px-0">
+                <a class="navbar-brand" href="#"><span class="text-success">Nav &#47;&#47;</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <main>
+                <div class="terminal-box mt-5">
+                    <code>
+                        $ whoami<span class="terminal-cursor"></span><br>
+            
+                    </code>
+                    <div class="mt-4" id="contact">
+                        <h2>Foreword</h2>
+                        <p>
+                            I have had a personal site since the mid-90s, i'll never forget those fond (painful) memories from the dawn of my time on the Interwebs.
+                            It was spent connecting to a FTP site over a 56Kbps dial-up connection (eeeeiiii ooorrrrrr crrrr). I had a single goal in mind, to upload HTML containing a
+                            distasteful amount of animated gifs to a site none would ever visit. Version 2.0 contained a hit counter and a guest book I believe - Geocities REPREZENT! 
+                        </p>
+                        <p>
+                            Fast forward many years and many iterations later, i'm still making sites that no one will ever visit.  
+                        </p>
+                        <h2>Frontend</h2>
+                        <ul>
+                            <li>Bootstrap4 CSS framework</li>
+                            <li>Beautiful open source glyths from Feather Icons</li>
+                        </ul>
+                        <h2>Backend</h2>
+                        <ul>
+                            <li>Green Unicorn application server</li>
+                            <li>Flask microframework for Python</li>
+                        </ul>
+                        <h2>Hosting</h2>
+                        <ul>
+                            <li>Google Cloud Platform App Engine</li>
+                        </ul>
+                        <h2>Change Log</h2>
+                        <p>...</p>
+                    </div>
+                </div>
+            </main>
+
+            <footer>
+                &copy; 2025 Rowan Chapman &mdash; Inspired by 90's computing &amp; hacker culture.
+            </footer>
         </div>
-    </nav>
     </div>
-    <!-- Header -->
-    <header>
-        <div class="container text-center">
-                <h1 class="display-1">Colophon</h1>
-        </div>
-    </header>
-
-    <section id="colophon">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Foreword</h2>
-            <p>I have had a personal site since the mid-90s, i'll never forget those fond (painful) memories from the dawn of my time on the Interwebs.
-            It was spent connecting to a FTP site over a 56Kbps dial-up connection (eeeeiiii ooorrrrrr crrrr). I had a single goal in mind, to upload HTML containing a
-            distasteful amount of animated gifs to a site none would ever visit. Version 2.0 contained a hit counter and a guest book I believe - Geocities REPREZENT! 
-            </p>
-            <p>
-            Fast forward many years and many iterations later, i'm still making sites that no one will ever visit.  
-            </p>
-            <h2>Frontend</h2>
-                <ul>
-                    <li>Bootstrap4 CSS framework</li>
-                    <li>Beautiful open source glyths from Feather Icons</li>
-                </ul>
-            <h2>Backend</h2>
-                <ul>
-                    <li>Green Unicorn application server</li>
-                    <li>Flask microframework for Python</li>
-                </ul>
-            <h2>Hosting</h2>
-                <ul>
-                    <li>Google Cloud Platform App Engine</li>
-                </ul>
-            <h2>Change Log</h2>
-                <p>...</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
 {% endblock %}

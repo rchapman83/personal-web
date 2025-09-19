@@ -1,38 +1,7 @@
 /* 
- * Custom Style
- * Background from https://www.heropatterns.com
- *
-
-
-body    {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #ffffff;
-}
-
-header {
-            padding: 154px 0 100px;
-            background-color: #F14281;
-            background-image: url("/static/img/header1.jpg");
-            background-repeat: no-repeat;
-            background-position: left top;
-            font-family: 'Bangers', cursive;
-            color: #ffffff;
-}
-
-.table-borderless {
-    background-color: transparent !important;
-}
-
-section {
-  padding: 100px 0;
-}
-
-footer {
-  color: #007bff;
-}
-
- */
-/* Hacker/90s Terminal Theme */
+* Custom Style
+* Hacker / 90s Terminal Theme 
+*/
 
 body {
     font-family: 'Fira Mono', 'Consolas', 'Courier New', monospace;
@@ -68,8 +37,9 @@ header p {
     border: 2px solid #39ff14;
     border-radius: 8px;
     padding: 2rem;
-    margin: 2rem auto;
-    max-width: 600px;
+    margin: 2rem 0;         /* Changed from 2rem auto to 2rem 0 */
+    width: 100%;            /* Make it full width of the container */
+    /* max-width removed */
     box-shadow: 0 0 24px #39ff1460;
 }
 
@@ -115,4 +85,9 @@ footer {
 @keyframes blink-cursor {
     0%, 50% { border-color: #39ff14; }
     51%, 100% { border-color: transparent; }
+}
+
+.navbar-hacker {
+    border-bottom: 2px dashed #39ff14 !important;
+    border-radius: 0 !important;
 }
