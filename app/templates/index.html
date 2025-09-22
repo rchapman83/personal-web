@@ -1,122 +1,164 @@
 {% extends "base.html" %}
 {% block title %}Rowan Chapman [Personal Website]{% endblock %}
 {% block content %}
-    <!-- Begin page content -->
-    
-    <!-- Navigation -->
-    <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">rnchapman.pw</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMarkup" aria-controls="navbarMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarMarkup">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#about">About</a>
-      	    </li>
-      	    <li class="nav-item">
-        	   <a class="nav-link" href="#contact">Contact</a>
-        	</li>
-        	<li class="nav-item">
-        	   <a class="nav-link" href="/colophon">Colophon</a>
-      	    </li>
-        </ul>
+
+    <!-- Center the container vertically and horizontally -->
+    <div class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="container">
+            <header>
+                <h1>&gt;&#95; Rowan Chapman</h1>
+                <p>Network Engineer &vert; Cybersecurity Specialist &vert; Drinker of Ales</p>
+            </header>
+
+            <!-- Navigation Bar (now under header and same width) -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-hacker mb-4">
+              <div class="container-fluid px-0">
+                <a class="navbar-brand" href="#"><span class="text-success">Nav &#47;&#47;</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#" data-content="home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#blog" data-content="blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#projects" data-content="projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#contact" data-content="contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="/colophon">Colophon</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            <main>
+                <div class="terminal-box mt-5" id="terminal-box">
+                    <code id="terminal-content">
+                      <p>
+                        $ echo "Welcome to my digital lair!"<br>
+                        Welcome to my digital lair!<br><br>
+                        $ cat home_pg.txt &vert; less <span class="terminal-cursor"></span><br>
+                        <img src="{{ profilePic }}" alt="Gravatar" class="rounded float-left mr-3"><br>
+                        My firends call me Chappy, i'm a network engineer and cybersecurity enthusiast with a passion for building secure, reliable systems. 
+                        With years of experience navigating the complex landscape of IT, I specialize in designing networks that won't drop the ball—and certainly won't drop the packets either! 
+                        Whether it's crafting resilient network architectures or safeguarding data against the latest security threats, I enjoy solving problems and keeping systems running smoothly.
+                      </p>
+                      <p>
+                        If you're looking for someone who can fortify your infrastructure while keeping the digital gremlins at bay, you've come to the right place. Let's connect and create something secure, scalable, and future-proof.
+                      </p> 
+                    </code>
+                </div>
+            </main>
+
+            <footer>
+                &copy; 2025 Rowan Chapman &mdash; Inspired by 90's computing &amp; hacker culture.
+            </footer>
         </div>
-    </nav>
     </div>
-    <!-- Header -->
-    <header>
-        <div class="container text-center">
-            <h1 class="display-1">
-                Rowan Chapman
-            </h1>
-            <h4>
-               IT Pro // Hacker // Drinker of Ales
-            </h4>
-        </div>
-    </header>
 
-    <section id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Hello, I'm Rowan.</h2>
+    <script>
+    const terminalContents = {
+        home: `
+          <p>
+            $ echo "Welcome to my digital lair!"<br>
+            Welcome to my digital lair!<br><br>
+            $ cat home_pg.txt &vert; less <span class="terminal-cursor"></span><br>
+            <img src="{{ profilePic }}" alt="Gravatar" class="rounded float-left mr-3"><br>
+            My firends call me Chappy, i'm a network engineer and cybersecurity enthusiast with a passion for building secure, reliable systems. 
+            With years of experience navigating the complex landscape of IT, I specialize in designing networks that won't drop the ball—and certainly won't drop the packets either! 
+            Whether it's crafting resilient network architectures or safeguarding data against the latest security threats, I enjoy solving problems and keeping systems running smoothly.
+          </p>
+          <p>
+            If you're looking for someone who can fortify your infrastructure while keeping the digital gremlins at bay, you've come to the right place. Let's connect and create something secure, scalable, and future-proof.
+          </p> 
+        `,
+        blog: `
+          <p>
+            $ cat blog.txt</span><br>
+            - "How to Secure Your Network"<br>
+            - "Automating with Python"<br>
+            - "Linux Tips &amp; Tricks"<br>
             <br>
-            <img src="{{ profilePic }}" alt="Gravatar" class="rounded float-left mr-3">
-            <p>
-                My firends call me Chappy, i'm a network engineer and cybersecurity enthusiast with a passion for building secure, reliable systems. 
-                With years of experience navigating the complex landscape of IT, I specialize in designing networks that won't drop the ball—and certainly won't drop the packets either! 
-                Whether it's crafting resilient network architectures or safeguarding data against the latest security threats, I enjoy solving problems and keeping systems running smoothly.
-            </p>
-            <p>
-                If you're looking for someone who can fortify your infrastructure while keeping the digital gremlins at bay, you've come to the right place. Let's connect and create something secure, scalable, and future-proof.
-            </p> 
+            $ echo "More posts coming soon..."<span class="terminal-cursor"></span>
+          </p>
+        `,
+        projects: `
+          <p>
+            $ ls projects/<br> <br>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="http://local-xp.guide" target="_blank">Mini city guide</a></li>
+              <li class="list-group-item"><a href="https://github.com/rchapman83/python-admin-scripts" target="_blank">Admin scripts</a></li>
+              <li class="list-group-item"><a href="http://www.doubles.cards" target="_blank">Doubles webapp</a></li>
+              <li class="list-group-item"><a href="http://www.passwd.studio" target="_blank">Password generator</a></li>
+            </ul>
             <br>
-            <p class="lead">
-                Hey, so if you'd like to check out some other stuff i've made you can find a full list <a href="https://www.rnchapman.directory">here <i data-feather="external-link" height="12" width="12"></i></a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>Contact</h2>
-            <p class="lead">You can hit me up via which ever social media platform is your fav.</p>
-            <br>
+            $ echo "See my <a href="https://github.com/rchapman83" target="_blank">Github</a> for more!"<span class="terminal-cursor"></span>
+          </p>
+        `,
+        contact: `
+          <p>
+            $ whoami<br>
+            Rowan Chapman<br><br>    
+            $ echo "Let's connect!" &vert; mail -s "Hello Rowan" rowan@example.com <span class="terminal-cursor"></span><br><br>
+          </p>
             <!-- Glyths from feathericons.com-->
             <table class="table table-borderless">
             <tbody>
             <tr>
                 <td>
-                    <i data-feather="facebook" color="#007bff"></i>
+                    <span class="align-middle"><a href="https://www.facebook.com/rnchapman" class="btn btn-hacker" target="_blank"><i data-feather="facebook" color="#007bff"></i> Facebook</a></span>  
                 </td>
                 <td>
-                    <a href="https://www.facebook.com/rnchapman" alt="Facebook"><span class="align-middle">rnchapman</span></a>
-                </td>
-                <td>
-                    <i data-feather="twitter" color="#007bff"></i>
-                </td>
-                <td>
-                    <a href="https://twitter.com/rchapman83" alt="Twitter"><span class="align-middle">rchapman83</span></a>
+                    <span class="align-middle"><a href="https://twitter.com/rchapman83" class="btn btn-hacker" target="_blank"><i data-feather="twitter" color="#007bff"></i> Twitter aka X</a></span>  
                 </td>
             </tr>
             <tr>
                 <td>
-                    <i data-feather="instagram" color="#007bff"></i>
+                    <span class="align-middle"><a href="https://www.instagram.com/chapmanrowan/" class="btn btn-hacker" target="_blank"><i data-feather="instagram" color="#007bff"></i> Instagram</a></span>  
                 </td>
                 <td>
-                    <a href="https://www.instagram.com/chapmanrowan/" alt="Instagram"><span class="align-middle">chapmanrowan</span></a>
-                </td>
-                <td>
-                    <i data-feather="github" color="#007bff"></i>
-                </td>
-                <td>
-                    <a href="https://github.com/rchapman83/" alt="GitHub"><span class="align-middle">rchapman83</span></a>
+                  <span class="align-middle"><a href="https://github.com/rchapman83" class="btn btn-hacker" target="_blank"><i data-feather="github" color="#007bff"></i> GitHub</a></span> 
                 </td>
             </tr>
             <tr>
                 <td>
-                    <i data-feather="key" color="#007bff"></i>
+                    <span class="align-middle"><a href="https://keybase.io/rnchapman" class="btn btn-hacker" target="_blank"><i data-feather="key" color="#007bff"></i> Keybase PGP (8BF1 B07D 75CB AB43)</a></span>  
                 </td>
                 <td>
-                    <a href="https://keybase.io/rnchapman" alt="PGP"><span class="align-middle">PGP (8BF1 B07D 75CB AB43)</span></a>    
-                </td>
-                <td>
-                    <i data-feather="linkedin" color="#007bff"></i>
-                </td>
-                <td>
-                    <a href="https://www.linkedin.com/in/rowan-chapman-b0686895" alt="LinkedIn"><span class="align-middle">LinkedIn</span></a> 
+                    <span class="align-middle"><a href="https://www.linkedin.com/in/rowan-chapman-b0686895" class="btn btn-hacker" target="_blank"><i data-feather="linkedin" color="#007bff"></i> LinkedIn</a></span>  
                 </td>
             </tr>
             </tbody>
             </table> 
-          </div>
-        </div>
-      </div>
-    </section>
+        `
+    };
+
+    // Listen for navbar clicks and update terminal content
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.nav-link[data-content]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Remove 'active' from all nav links
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                // Add 'active' to clicked link
+                this.classList.add('active');
+                // Update terminal content
+                const contentKey = this.getAttribute('data-content');
+                document.getElementById('terminal-content').innerHTML = terminalContents[contentKey] || '';
+                // Re-render feather icons
+                if (window.feather) {
+                    feather.replace();
+                }
+            });
+        });
+    });
+    </script>
 {% endblock %}
