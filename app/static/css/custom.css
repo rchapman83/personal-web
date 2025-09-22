@@ -39,6 +39,7 @@ header p {
     padding: 2rem;
     margin: 2rem 0;         /* Changed from 2rem auto to 2rem 0 */
     width: 100%;            /* Make it full width of the container */
+    min-height: 400px; /* or any value you prefer */
     /* max-width removed */
     box-shadow: 0 0 24px #39ff1460;
 }
@@ -90,4 +91,13 @@ footer {
 .navbar-hacker {
     border-bottom: 2px dashed #39ff14 !important;
     border-radius: 0 !important;
+}
+
+.table {
+    background-color: transparent !important;
+    --bs-table-bg: transparent !important;
+}
+
+.list-group {
+    --bs-list-group-bg: transparent !important;
 }
