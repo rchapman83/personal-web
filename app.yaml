@@ -1,8 +1,10 @@
-runtime: python
+runtime: python313
 env: standard
-runtime_config:
-    operating_system: 'ubuntu22'
-    runtime_version: '3.13'
+instance_class: B2
+# Runtime configuration to use a specific operating system and runtime version in a flexible (flex) environment.
+#runtime_config:
+#    operating_system: 'ubuntu22'
+#    runtime_version: '3.13'
 
 env_variables:
   # GAE_INSTANCE can also be used as proj name
@@ -18,8 +20,6 @@ env_variables:
   GIT_TOKEN: '1243'
   
 entrypoint: gunicorn --bind :$APP_PORT --workers 4 --threads 8 --timeout 0 $APP_MODULE
-
-instance_class: B2
 
 # This sample incurs costs to run on the App Engine flexible environment.
 # The settings below are to reduce costs and are not appropriate for production use, unless you are a tightarse like me. 
