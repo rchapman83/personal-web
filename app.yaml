@@ -1,5 +1,5 @@
 runtime: python
-env: flex
+env: standard
 runtime_config:
     operating_system: 'ubuntu22'
     runtime_version: '3.13'
@@ -17,26 +17,30 @@ env_variables:
   GIT_REPO: 'zzzz/xxxx'
   GIT_TOKEN: '1243'
   
-entrypoint: gunicorn --bind :$APP_PORT --workers 2 --threads 8 --timeout 0 $APP_MODULE
+entrypoint: gunicorn --bind :$APP_PORT --workers 4 --threads 8 --timeout 0 $APP_MODULE
 
-instance_class: F1
+instance_class: B2
 
 # This sample incurs costs to run on the App Engine flexible environment.
-# The settings below are to reduce costs during testing and are not appropriate for production use. 
-#manual_scaling:
-#  instances: 1
-#resources:
-#  cpu: 1
-#  memory_gb: 0.5
-#  disk_size_gb: 10
+# The settings below are to reduce costs and are not appropriate for production use, unless you are a tightarse like me. 
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
 
-automatic_scaling:
-  min_num_instances: 1
-  max_num_instances: 2
-  cool_down_period_sec: 180
-  cpu_utilization:
-    target_utilization: 0.8
-  target_concurrent_requests: 100
+#basic_scaling:
+#  max_instances: 2
+#  idle_timeout: 10m
+
+#automatic_scaling:
+#  min_num_instances: 1
+#  max_num_instances: 2
+#  cool_down_period_sec: 180
+#  cpu_utilization:
+#    target_utilization: 0.8
+#  target_concurrent_requests: 100
 
 # Liveness checks confirm that the VM and the Docker container are running. 
 # Instances that are deemed unhealthy are restarted.
