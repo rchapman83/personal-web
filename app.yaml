@@ -60,9 +60,9 @@ readiness_check:
   success_threshold: 2
   app_start_timeout_sec: 900
 
-# Specifies which files in the application directory are not to be uploaded to App Engine.
-skip_files:
-- ^.*\.bak$
+# Specifies which files in the application directory are not to be uploaded to App Engine. For use in flex env only.
+#skip_files:
+#- ^.*\.bak$
 
 # Sets a global default cache period for all static file handlers for an application. Default is 10mins
 #default_expiration: '1d 6h'
