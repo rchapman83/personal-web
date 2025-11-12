@@ -1,6 +1,6 @@
 runtime: python313
 env: standard
-instance_class: B2
+instance_class: B1
 # Runtime configuration to use a specific operating system and runtime version in a flexible (flex) environment.
 #runtime_config:
 #    operating_system: 'ubuntu22'
