@@ -7,12 +7,11 @@ from flask_talisman import Talisman
 
 # Content Security Policy (CSP) Header
 csp = {
-    'default-src': [
-        '\'self\'',
-        'https://www.gravatar.com/', 
-        'https://www.googletagmanager.com',
-        'https://fonts.googleapis.com'
-    ]
+    "default-src": ["'self'", "https://*.rnchapman.pw", "https://*.rnchapman.me"],
+    "script-src": ["'self'", "https://www.googletagmanager.com"],    # allow local scripts + GTM
+    "style-src": ["'self'", "https://fonts.googleapis.com"],         # allow Google Fonts CSS if needed
+    "font-src": ["https://fonts.gstatic.com", "https://fonts.googleapis.com"],
+    "img-src": ["'self'", "https://www.gravatar.com", "data:"],      # allow gravatar + data URIs
 }
 # HTTP Strict Transport Security (HSTS) Header
 hsts = {
