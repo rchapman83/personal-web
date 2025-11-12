@@ -1,6 +1,6 @@
 runtime: python313
 env: standard
-instance_class: B2
+instance_class: B1
 # Runtime configuration to use a specific operating system and runtime version in a flexible (flex) environment.
 #runtime_config:
 #    operating_system: 'ubuntu22'
@@ -23,16 +23,16 @@ entrypoint: gunicorn --bind :$APP_PORT --workers 4 --threads 8 --timeout 0 $APP_
 
 # This sample incurs costs to run on the App Engine flexible environment.
 # The settings below are to reduce costs and are not appropriate for production use, unless you are a tightarse like me. 
-manual_scaling:
-  instances: 1
-resources:
-  cpu: 1
-  memory_gb: 0.5
-  disk_size_gb: 10
+#manual_scaling:
+#  instances: 1
+#resources:
+#  cpu: 1
+#  memory_gb: 0.5
+#  disk_size_gb: 10
 
-#basic_scaling:
-#  max_instances: 2
-#  idle_timeout: 10m
+basic_scaling:
+  max_instances: 1
+  idle_timeout: 15m
 
 #automatic_scaling:
 #  min_num_instances: 1
@@ -60,12 +60,8 @@ readiness_check:
   success_threshold: 2
   app_start_timeout_sec: 900
 
-# Specifies which files in the application directory are not to be uploaded to App Engine. For use in flex env only.
-# skip_files:
-# - ^.*\.bak$
-
 # Sets a global default cache period for all static file handlers for an application. Default is 10mins
-#default_expiration: '1d 6h'
+default_expiration: '1d 6h'
 
 handlers:
   # This configures Google App Engine to serve the files in the app's static
