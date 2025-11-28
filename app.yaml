@@ -1,6 +1,7 @@
 runtime: python313
 env: standard
 instance_class: B1
+service: web_app
 # Runtime configuration to use a specific operating system and runtime version in a flexible (flex) environment.
 #runtime_config:
 #    operating_system: 'ubuntu22'
@@ -10,9 +11,11 @@ env_variables:
   # GAE_INSTANCE can also be used as proj name
   PROJECT_NAME: $GOOGLE_CLOUD_PROJECT
   APP_VERSION: $GAE_VERSION
+  # Make sure this is set to the same value as GAE_SERVICE to enable profiler
+  APP_NAME: 'web_app'
   APP_MODULE: 'app:application'
   APP_PORT: '8080'
-  FLASK_SECRET: 'secretkey'
+  FLASK_SECRET: 'seed'
   FLASK_SETTINGS: 'settings.py'
   GRAV_USER: 'rchapman83@gmail.com'
   GA_TRACKING_ID: '45321'
