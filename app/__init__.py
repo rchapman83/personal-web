@@ -37,7 +37,6 @@ try:
     )
 except (ValueError, NotImplementedError) as e:
     print(e)  # Handle errors here
-
 """
 # Construct application
 # Should the env var not be set you can use application.config.from_pyfile('SETTING FILE')
