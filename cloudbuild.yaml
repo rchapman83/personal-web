@@ -2,25 +2,32 @@
 # Build from GCP CloudBuild samples - github.com/GoogleCloudPlatform/cloud-build-samples/tree/main/python-example-flask
 # [START cloudbuild_python_yaml]
 steps:
-  # Install dependencies
-#  - name: python
-#    entrypoint: pip
-#    args: ['install', '-r', 'requirements.txt', '--user']
-#    id: 'install python dependencies'
-  # [END cloudbuild_python_dependencies_yaml]
+  # Upgrade pip
+  - name: python
+    entrypoint: pip
+    args: ['install', '--upgrade', 'pip']
+    id: 'upgrade pip'
+  
+  # Update setuptools pip install --upgrade pip setuptools wheel
+  - name: python
+    entrypoint: pip
+    args: ['install', '--upgrade', 'setuptools', 'wheel']
+    id: 'upgrade setuptools and wheel'
 
-  # [START cloudbuild_python_tests_yaml]
+  # Install dependencies
+  #  - name: python
+  #    entrypoint: pip
+  #    args: ['install', '-r', 'requirements.txt', '--user']
+  #    id: 'install python dependencies'
+
   # Run unit tests
   #- name: python
   #  entrypoint: python
   #  args: ["-m", "pytest", "--junitxml=${SHORT_SHA}_test_log.xml"] 
-  # [END cloudbuild_python_tests_yaml]
 
-  # [START cloudbuild_python_deploy_yaml]
   # Use '--verbosity=debug' arg for more info on errors
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', 'app.yaml', '--project=personal-web-264205', '--version=$SHORT_SHA']
     timeout: '1600s'
     id: 'deploy to app engine'
-  # [END cloudbuild_python_deploy_yaml]
 # [END cloudbuild_python_yaml]
