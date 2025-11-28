@@ -14,18 +14,6 @@ steps:
     args: ['install', '--upgrade', 'setuptools', 'wheel']
     id: 'upgrade setuptools and wheel'
 
-  # Requirements for profiler deploy,  PEP 517 installer.
-  #- name: python
-   # entrypoint: pip
-    #args: ['install', 'google-cloud-profiler', '--use-pep517']
-    #id: 'install google profiler using pep517'
-
-  # Install dependencies
-  #  - name: python
-  #    entrypoint: pip
-  #    args: ['install', '-r', 'requirements.txt', '--user']
-  #    id: 'install python dependencies'
-
   # Run unit tests
   #- name: python
   #  entrypoint: python
