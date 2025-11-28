@@ -9,6 +9,11 @@ from flask import Flask, render_template, send_from_directory, request
 from os import environ
 # Import code for encoding urls and generating md5 hashes
 import urllib, hashlib
+# Import Google Cloud Datastore client
+from google.cloud import datastore
+
+def create_client(project_id):
+    return datastore.Client(project_id)
 
 # Define custom functions
 # Funtion to generate the URL my gravatar profile picture on the home page
