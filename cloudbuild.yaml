@@ -14,6 +14,12 @@ steps:
     args: ['install', '--upgrade', 'setuptools', 'wheel']
     id: 'upgrade setuptools and wheel'
 
+  # Requirements for profiler deploy,  PEP 517 installer.
+  - name: python
+    entrypoint: pip
+    args: ['install', '--use-pep517']
+    id: 'install pep517'
+
   # Install dependencies
   #  - name: python
   #    entrypoint: pip
