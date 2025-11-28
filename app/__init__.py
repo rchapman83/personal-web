@@ -25,19 +25,19 @@ hsts = {
     'max-age': 31536000,
     'includeSubDomains': True
 }
-"""
+
 try:
     googlecloudprofiler.start(
     service=srvc_name,
     service_version=srvc_version,
     # verbose is the logging level. 0-error, 1-warning, 2-info, 3-debug. It defaults to 0 (error) if not set.
-    verbose=3,
+    verbose=0,
     # project_id must be set if not running on GCP.
     project_id=proj_name,
     )
 except (ValueError, NotImplementedError) as e:
     print(e)  # Handle errors here
-"""
+
 # Construct application
 # Should the env var not be set you can use application.config.from_pyfile('SETTING FILE')
 application = Flask(__name__.split('.')[0], static_folder='static', template_folder='templates')
