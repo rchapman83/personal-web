@@ -17,8 +17,8 @@ steps:
   # Requirements for profiler deploy,  PEP 517 installer.
   - name: python
     entrypoint: pip
-    args: ['install', '--use-pep517']
-    id: 'install pep517'
+    args: ['install', 'google-cloud-profiler', '--use-pep517']
+    id: 'install google profiler using pep517'
 
   # Install dependencies
   #  - name: python
