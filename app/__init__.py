@@ -7,6 +7,11 @@ from flask import Flask
 from flask_talisman import Talisman # type: ignore
 # Google Cloud Profiler import
 import googlecloudprofiler # type: ignore
+# Import Google Cloud Datastore client
+from google.cloud import datastore
+
+def create_client(project_id):
+    return datastore.Client(project_id)
 
 proj_name = environ.get('PROJECT_NAME')
 srvc_name = environ.get('APP_NAME')
